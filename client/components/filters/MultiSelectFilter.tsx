@@ -128,19 +128,20 @@ export function MultiSelectFilter({
               {/* Individual options */}
               {options.map((option) => {
                 const isSelected = selected.includes(option.value);
-                const isHovered =
-                  selected.length > 0 && selected[0] === option.value;
 
                 return (
                   <div
                     key={option.value}
-                    className={`flex items-center h-10 px-3 rounded-lg cursor-pointer ${
-                      isHovered ? "bg-[#ECF7FB]" : ""
-                    } hover:bg-[#ECF7FB]`}
+                    className="flex items-center h-10 px-3 rounded-lg cursor-pointer hover:bg-[#ECF7FB]"
                     onClick={() => handleToggle(option.value)}
                   >
                     <div className="flex items-center gap-1.5">
-                      <Checkbox checked={isSelected} />
+                      <div className="w-6 h-6 flex items-center justify-center">
+                        <Checkbox
+                          checked={isSelected}
+                          className="w-[18px] h-[18px] rounded-sm border-[1.5px] border-[#B8B8C0] data-[state=checked]:bg-[#005487] data-[state=checked]:border-[#005487]"
+                        />
+                      </div>
                       <span className="text-[#30394A] font-normal text-base leading-5">
                         {option.label}
                       </span>
