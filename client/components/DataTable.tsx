@@ -253,91 +253,97 @@ export function DataTable<
                     </td>
                   )}
                   {actions && (
-                    <td className="h-12">
-                      {isHovered && (
-                        <div className="flex items-center">
-                          {actions.onCopy && (
-                            <button
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                actions.onCopy?.(row);
-                              }}
-                              className="w-10 h-12 flex items-center justify-center hover:opacity-70 transition-opacity"
-                              title="Copy protocol"
+                    <td className="h-12 px-0">
+                      <div className="flex items-center h-full">
+                        {actions.onCopy && (
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              actions.onCopy?.(row);
+                            }}
+                            className={`w-10 h-full flex items-center justify-center transition-all ${
+                              isHovered
+                                ? "opacity-100"
+                                : "opacity-0 pointer-events-none"
+                            } hover:opacity-70`}
+                            title="Copy protocol"
+                          >
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
+                              <path
+                                d="M5.88235 21C5.36471 21 4.92141 20.8239 4.55247 20.4717C4.18416 20.1189 4 19.695 4 19.2V6.6H5.88235V19.2H16.2353V21H5.88235ZM9.64706 17.4C9.12941 17.4 8.68643 17.2239 8.31812 16.8717C7.94918 16.5189 7.76471 16.095 7.76471 15.6V4.8C7.76471 4.305 7.94918 3.8811 8.31812 3.5283C8.68643 3.1761 9.12941 3 9.64706 3H18.1176C18.6353 3 19.0786 3.1761 19.4475 3.5283C19.8158 3.8811 20 4.305 20 4.8V15.6C20 16.095 19.8158 16.5189 19.4475 16.8717C19.0786 17.2239 18.6353 17.4 18.1176 17.4H9.64706ZM9.64706 15.6H18.1176V4.8H9.64706V15.6Z"
+                                fill="black"
+                              />
+                            </svg>
+                          </button>
+                        )}
+                        {actions?.onDelete && (
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleDelete(row);
+                            }}
+                            className={`w-10 h-full flex items-center justify-center transition-all ${
+                              isHovered
+                                ? "opacity-100"
+                                : "opacity-0 pointer-events-none"
+                            } hover:opacity-70`}
+                            title="Delete protocol"
+                          >
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <rect
                                 width="24"
                                 height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M5.88235 21C5.36471 21 4.92141 20.8239 4.55247 20.4717C4.18416 20.1189 4 19.695 4 19.2V6.6H5.88235V19.2H16.2353V21H5.88235ZM9.64706 17.4C9.12941 17.4 8.68643 17.2239 8.31812 16.8717C7.94918 16.5189 7.76471 16.095 7.76471 15.6V4.8C7.76471 4.305 7.94918 3.8811 8.31812 3.5283C8.68643 3.1761 9.12941 3 9.64706 3H18.1176C18.6353 3 19.0786 3.1761 19.4475 3.5283C19.8158 3.8811 20 4.305 20 4.8V15.6C20 16.095 19.8158 16.5189 19.4475 16.8717C19.0786 17.2239 18.6353 17.4 18.1176 17.4H9.64706ZM9.64706 15.6H18.1176V4.8H9.64706V15.6Z"
-                                  fill="black"
-                                />
-                              </svg>
-                            </button>
-                          )}
-                          {actions?.onDelete && (
-                            <button
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                handleDelete(row);
-                              }}
-                              className="w-10 h-12 flex items-center justify-center hover:opacity-70 transition-opacity"
-                              title="Delete protocol"
-                            >
-                              <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <rect
-                                  width="24"
-                                  height="24"
-                                  rx="4"
-                                  fill="#E1E1E4"
-                                  fillOpacity="0.9"
-                                />
-                                <path
-                                  d="M13.5859 4L14.5859 5H9.41406L10.4141 4H13.5859Z"
-                                  stroke="#005487"
-                                  strokeWidth="2"
-                                />
-                                <path
-                                  d="M14 17V11"
-                                  stroke="#005487"
-                                  strokeWidth="2"
-                                />
-                                <path
-                                  d="M10 17V11"
-                                  stroke="#005487"
-                                  strokeWidth="2"
-                                />
-                                <path
-                                  d="M4 6L20 6"
-                                  stroke="#005487"
-                                  strokeWidth="2"
-                                  strokeLinejoin="round"
-                                />
-                                <rect
-                                  x="5"
-                                  y="6"
-                                  width="14"
-                                  height="15"
-                                  rx="1"
-                                  stroke="#005487"
-                                  strokeWidth="2"
-                                  strokeLinejoin="round"
-                                />
-                              </svg>
-                            </button>
-                          )}
-                        </div>
-                      )}
+                                rx="4"
+                                fill="#E1E1E4"
+                                fillOpacity="0.9"
+                              />
+                              <path
+                                d="M13.5859 4L14.5859 5H9.41406L10.4141 4H13.5859Z"
+                                stroke="#005487"
+                                strokeWidth="2"
+                              />
+                              <path
+                                d="M14 17V11"
+                                stroke="#005487"
+                                strokeWidth="2"
+                              />
+                              <path
+                                d="M10 17V11"
+                                stroke="#005487"
+                                strokeWidth="2"
+                              />
+                              <path
+                                d="M4 6L20 6"
+                                stroke="#005487"
+                                strokeWidth="2"
+                                strokeLinejoin="round"
+                              />
+                              <rect
+                                x="5"
+                                y="6"
+                                width="14"
+                                height="15"
+                                rx="1"
+                                stroke="#005487"
+                                strokeWidth="2"
+                                strokeLinejoin="round"
+                              />
+                            </svg>
+                          </button>
+                        )}
+                      </div>
                     </td>
                   )}
                 </tr>
