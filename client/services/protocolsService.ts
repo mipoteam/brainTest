@@ -1,4 +1,4 @@
-export type CoilType = "H1" | "H4";
+export type CoilType = "H1" | "H4" | "H7" | string;
 
 export interface Protocol {
   id: string;
