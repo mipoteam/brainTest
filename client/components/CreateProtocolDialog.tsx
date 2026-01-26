@@ -268,42 +268,46 @@ export function CreateProtocolDialog({
           <div className="flex flex-col gap-2">
             {/* Row 1 */}
             <div className="flex items-center gap-3">
-              <ValueCard
-                value={formData.frequency}
-                unit="Hz"
-                label="Frequency"
-                onIncrement={() =>
-                  setFormData({
-                    ...formData,
-                    frequency: Number((formData.frequency + 0.1).toFixed(1)),
-                  })
-                }
-                onDecrement={() =>
-                  setFormData({
-                    ...formData,
-                    frequency: Math.max(0, Number((formData.frequency - 0.1).toFixed(1))),
-                  })
-                }
-                className="w-[180px] bg-[#F9F9F9]"
-              />
-              <ValueCard
-                value={formData.trainDuration}
-                unit="Sec"
-                label="Train duration"
-                onIncrement={() =>
-                  setFormData({
-                    ...formData,
-                    trainDuration: Number((formData.trainDuration + 0.1).toFixed(1)),
-                  })
-                }
-                onDecrement={() =>
-                  setFormData({
-                    ...formData,
-                    trainDuration: Math.max(0, Number((formData.trainDuration - 0.1).toFixed(1))),
-                  })
-                }
-                className="w-[180px] bg-[#F9F9F9]"
-              />
+              <div className="bg-[#F9F9F9] p-2 rounded">
+                <ValueCard
+                  value={formData.frequency}
+                  unit="Hz"
+                  label="Frequency"
+                  onIncrement={() =>
+                    setFormData({
+                      ...formData,
+                      frequency: Number((formData.frequency + 0.1).toFixed(1)),
+                    })
+                  }
+                  onDecrement={() =>
+                    setFormData({
+                      ...formData,
+                      frequency: Math.max(0, Number((formData.frequency - 0.1).toFixed(1))),
+                    })
+                  }
+                  className="w-[180px]"
+                />
+              </div>
+              <div className="bg-[#F9F9F9] p-2 rounded">
+                <ValueCard
+                  value={formData.trainDuration}
+                  unit="Sec"
+                  label="Train duration"
+                  onIncrement={() =>
+                    setFormData({
+                      ...formData,
+                      trainDuration: Number((formData.trainDuration + 0.1).toFixed(1)),
+                    })
+                  }
+                  onDecrement={() =>
+                    setFormData({
+                      ...formData,
+                      trainDuration: Math.max(0, Number((formData.trainDuration - 0.1).toFixed(1))),
+                    })
+                  }
+                  className="w-[180px]"
+                />
+              </div>
               <div className="flex items-center bg-[#F9F9F9] rounded overflow-hidden">
                 <div className="w-[3px] h-20 bg-[#005487]" />
                 <div className="flex flex-col px-3 py-2 gap-0.5">
@@ -324,58 +328,64 @@ export function CreateProtocolDialog({
 
             {/* Row 2 */}
             <div className="flex items-center gap-3">
-              <ValueCard
-                value={formData.interTrainInterval}
-                unit="Sec"
-                label="Inter train interval"
-                onIncrement={() =>
-                  setFormData({
-                    ...formData,
-                    interTrainInterval: Number((formData.interTrainInterval + 0.1).toFixed(1)),
-                  })
-                }
-                onDecrement={() =>
-                  setFormData({
-                    ...formData,
-                    interTrainInterval: Math.max(
-                      0,
-                      Number((formData.interTrainInterval - 0.1).toFixed(1)),
-                    ),
-                  })
-                }
-                className="w-[180px] bg-[#F9F9F9]"
-              />
-              <ValueCard
-                value={formData.trains}
-                unit="No."
-                label="Trains"
-                onIncrement={() =>
-                  setFormData({ ...formData, trains: formData.trains + 1 })
-                }
-                onDecrement={() =>
-                  setFormData({
-                    ...formData,
-                    trains: Math.max(1, formData.trains - 1),
-                  })
-                }
-                className="w-[180px] bg-[#F9F9F9]"
-              />
+              <div className="bg-[#F9F9F9] p-2 rounded">
+                <ValueCard
+                  value={formData.interTrainInterval}
+                  unit="Sec"
+                  label="Inter train interval"
+                  onIncrement={() =>
+                    setFormData({
+                      ...formData,
+                      interTrainInterval: Number((formData.interTrainInterval + 0.1).toFixed(1)),
+                    })
+                  }
+                  onDecrement={() =>
+                    setFormData({
+                      ...formData,
+                      interTrainInterval: Math.max(
+                        0,
+                        Number((formData.interTrainInterval - 0.1).toFixed(1)),
+                      ),
+                    })
+                  }
+                  className="w-[180px]"
+                />
+              </div>
+              <div className="bg-[#F9F9F9] p-2 rounded">
+                <ValueCard
+                  value={formData.trains}
+                  unit="No."
+                  label="Trains"
+                  onIncrement={() =>
+                    setFormData({ ...formData, trains: formData.trains + 1 })
+                  }
+                  onDecrement={() =>
+                    setFormData({
+                      ...formData,
+                      trains: Math.max(1, formData.trains - 1),
+                    })
+                  }
+                  className="w-[180px]"
+                />
+              </div>
             </div>
 
             {/* Row 3 */}
             <div className="flex items-center gap-3">
-              <ValueCard
-                value={formData.mt}
-                unit="%"
-                label="MT"
-                onIncrement={() =>
-                  setFormData({ ...formData, mt: formData.mt + 1 })
-                }
-                onDecrement={() =>
-                  setFormData({ ...formData, mt: Math.max(0, formData.mt - 1) })
-                }
-                className="w-[180px] bg-[#F9F9F9]"
-              />
+              <div className="bg-[#F9F9F9] p-2 rounded">
+                <ValueCard
+                  value={formData.mt}
+                  unit="%"
+                  label="MT"
+                  onIncrement={() =>
+                    setFormData({ ...formData, mt: formData.mt + 1 })
+                  }
+                  onDecrement={() =>
+                    setFormData({ ...formData, mt: Math.max(0, formData.mt - 1) })
+                  }
+                  className="w-[180px]"
+                />
+              </div>
             </div>
           </div>
 
