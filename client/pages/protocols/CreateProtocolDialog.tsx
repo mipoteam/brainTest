@@ -430,9 +430,9 @@ export function CreateProtocolDialog({
         <div className="flex items-center justify-end gap-4 px-8 py-4 border-t border-[#E1E1E4]">
           <button
             onClick={handleCancel}
-            className="h-10 px-4 flex items-center justify-center border border-[#005487] rounded-lg transition-colors group hover:border-[#326392]"
+            className="h-10 px-4 flex items-center justify-center border border-[#005487] rounded-lg transition-colors hover:bg-[#326392]"
           >
-            <span className="text-[#005487] text-sm font-medium group-hover:text-[#326392] transition-colors">Cancel</span>
+            <span className="text-[#005487] text-sm font-medium">Cancel</span>
           </button>
           <button
             onClick={handleSave}
