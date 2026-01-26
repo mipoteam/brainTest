@@ -134,7 +134,7 @@ export function CreateProtocolDialog({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
-        className="max-w-[700px] p-0 gap-0 overflow-hidden border-0 rounded-none"
+        className="max-w-[700px] p-0 gap-0 overflow-hidden !border-0 !rounded-none"
         onInteractOutside={(e) => e.preventDefault()}
       >
         {/* Custom Header */}
