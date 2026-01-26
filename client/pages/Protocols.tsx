@@ -279,6 +279,8 @@ export default function Protocols() {
             itemsPerPage={itemsPerPage}
             currentPage={currentPage}
             onPageChange={setCurrentPage}
+            showLockColumn={true}
+            showNoteColumn={true}
           />
         </div>
       </div>
