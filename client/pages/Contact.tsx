@@ -234,15 +234,8 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Version */}
-          <div className="mt-6">
-            <p className="text-[#777786] text-base">Version 172.22</p>
-          </div>
-        </div>
-
-        {/* Feedback Sidebar */}
-        <div className="w-[412px] flex-shrink-0">
-          <div className="bg-white rounded-lg shadow-[0_0_20px_0_rgba(0,0,0,0.12)] p-8 sticky top-6">
+          {/* Get in touch Section */}
+          <div className="flex-1 bg-white rounded-lg shadow-[0_0_20px_0_rgba(0,0,0,0.12)] p-8">
             <div className="mb-8">
               <h2 className="text-[#30394A] text-2xl font-normal mb-0.5">
                 Get in touch
