@@ -10,6 +10,90 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+// Page Data
+const PAGE_DATA = {
+  title: "Contact us",
+  subtitle: "We're here to help.",
+  version: "Version 172.22",
+};
+
+// Support Section Data
+const SUPPORT_SECTION = {
+  label: "SUPPORT",
+  title: "Get help using BrainsWay",
+  items: [
+    {
+      name: "General Inquiries & Sales",
+      email: "DeepTMS@brainsway.com",
+      phone: "844-386-7001 ext 2",
+    },
+    {
+      name: "Service/Maintenance",
+      email: "service@brainsway.com",
+      phone: "844-386-7001 ext 3",
+    },
+    {
+      name: "Reimbursement Support (U.S.)",
+      email: "reimbursement@brainsway.com",
+      phone: "844-386-7001 ext 4",
+    },
+  ],
+};
+
+// Locations Section Data
+const LOCATIONS_SECTION = {
+  label: "LOCATIONS",
+  title: "Learn more about BrainsWay",
+  website: "www.brainsway.com",
+  websiteUrl: "https://www.brainsway.com",
+  items: [
+    {
+      name: "U.S. Headquarters",
+      address: ["95 Washington Street, Suite 224-323", "Canton, MA 020"],
+      phone: "844-386-7001",
+    },
+    {
+      name: "International Headquarters",
+      address: ["16 Hartum St, Har Hotzvim,", "Jerusalem 9777516, Israel"],
+      phone: "+972-2-5824030",
+    },
+  ],
+};
+
+// Get in Touch Section Data
+const GET_IN_TOUCH_SECTION = {
+  title: "Get in touch",
+  subtitle: "Help us improve our system by sharing your feedback.",
+  submitButtonText: "Send message",
+};
+
+// Form Fields Data
+const FORM_FIELDS = {
+  phoneCountries: [
+    { code: "+1", label: "+1" },
+    { code: "+44", label: "+44" },
+    { code: "+972", label: "+972" },
+  ],
+  feedbackSubjects: [
+    { value: "bug", label: "Bug Report" },
+    { value: "feature", label: "Feature Request" },
+    { value: "general", label: "General Feedback" },
+  ],
+  labels: {
+    name: "Name",
+    email: "Email",
+    phoneNumber: "Phone number",
+    feedbackSubject: "Feedback subject",
+    message: "Your message",
+    checkboxLabel:
+      "I would like a BrainsWay representative to contact me regarding this message",
+  },
+  placeholders: {
+    feedbackSubject: "Select feedback",
+    message: "Add note",
+  },
+};
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -32,9 +116,9 @@ export default function Contact() {
         {/* Title */}
         <div className="mb-10">
           <h1 className="text-[#30394A] text-5xl font-normal mb-1">
-            Contact us
+            {PAGE_DATA.title}
           </h1>
-          <p className="text-[#30394A] text-base">We're here to help.</p>
+          <p className="text-[#30394A] text-base">{PAGE_DATA.subtitle}</p>
         </div>
 
         {/* Content Wrapper */}
@@ -91,60 +175,32 @@ export default function Contact() {
                 {/* Title */}
                 <div>
                   <p className="text-[#777786] text-sm font-medium tracking-[1.4px] uppercase mb-2">
-                    SUPPORT
+                    {SUPPORT_SECTION.label}
                   </p>
                   <h2 className="text-[#30394A] text-2xl font-normal">
-                    Get help using BrainsWay
+                    {SUPPORT_SECTION.title}
                   </h2>
                 </div>
               </div>
 
               {/* Support Items */}
               <div className="flex gap-[72px] pl-[86px]">
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-[#30394A] text-xl font-bold leading-7">
-                    General Inquiries & Sales
-                  </h3>
-                  <a
-                    href="mailto:DeepTMS@brainsway.com"
-                    className="text-[#005487] text-xl leading-7 hover:underline"
-                  >
-                    DeepTMS@brainsway.com
-                  </a>
-                  <p className="text-[#30394A] text-xl leading-7">
-                    Tel: 844-386-7001 ext 2
-                  </p>
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-[#30394A] text-xl font-bold leading-7">
-                    Service/Maintenance
-                  </h3>
-                  <a
-                    href="mailto:service@brainsway.com"
-                    className="text-[#005487] text-xl leading-7 hover:underline"
-                  >
-                    service@brainsway.com
-                  </a>
-                  <p className="text-[#30394A] text-xl leading-7">
-                    Tel: 844-386-7001 ext 3
-                  </p>
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-[#30394A] text-xl font-bold leading-7">
-                    Reimbursement Support (U.S.)
-                  </h3>
-                  <a
-                    href="mailto:reimbursement@brainsway.com"
-                    className="text-[#005487] text-xl leading-7 hover:underline"
-                  >
-                    reimbursement@brainsway.com
-                  </a>
-                  <p className="text-[#30394A] text-xl leading-7">
-                    Tel: 844-386-7001 ext 4
-                  </p>
-                </div>
+                {SUPPORT_SECTION.items.map((item, index) => (
+                  <div key={index} className="flex flex-col gap-2">
+                    <h3 className="text-[#30394A] text-xl font-bold leading-7">
+                      {item.name}
+                    </h3>
+                    <a
+                      href={`mailto:${item.email}`}
+                      className="text-[#005487] text-xl leading-7 hover:underline"
+                    >
+                      {item.email}
+                    </a>
+                    <p className="text-[#30394A] text-xl leading-7">
+                      Tel: {item.phone}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -182,57 +238,44 @@ export default function Contact() {
                 {/* Title */}
                 <div>
                   <p className="text-[#777786] text-sm font-medium tracking-[1.4px] uppercase mb-2">
-                    LOCATIONS
+                    {LOCATIONS_SECTION.label}
                   </p>
                   <h2 className="text-[#30394A] text-2xl font-normal mb-2">
-                    Learn more about BrainsWay
+                    {LOCATIONS_SECTION.title}
                   </h2>
                   <a
-                    href="https://www.brainsway.com"
+                    href={LOCATIONS_SECTION.websiteUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#005487] text-xl leading-7 hover:underline"
                   >
-                    www.brainsway.com
+                    {LOCATIONS_SECTION.website}
                   </a>
                 </div>
               </div>
 
               {/* Location Items */}
               <div className="flex gap-[72px] pl-[86px]">
-                <div className="flex flex-col gap-4">
-                  <h3 className="text-[#30394A] text-xl font-bold leading-7">
-                    U.S. Headquarters
-                  </h3>
-                  <div className="flex flex-col gap-2">
+                {LOCATIONS_SECTION.items.map((location, index) => (
+                  <div key={index} className="flex flex-col gap-4">
+                    <h3 className="text-[#30394A] text-xl font-bold leading-7">
+                      {location.name}
+                    </h3>
+                    <div className="flex flex-col gap-2">
+                      {location.address.map((line, lineIndex) => (
+                        <p
+                          key={lineIndex}
+                          className="text-[#30394A] text-xl leading-7"
+                        >
+                          {line}
+                        </p>
+                      ))}
+                    </div>
                     <p className="text-[#30394A] text-xl leading-7">
-                      95 Washington Street, Suite 224-323
-                    </p>
-                    <p className="text-[#30394A] text-xl leading-7">
-                      Canton, MA 020
-                    </p>
-                  </div>
-                  <p className="text-[#30394A] text-xl leading-7">
-                    Tel: 844-386-7001
-                  </p>
-                </div>
-
-                <div className="flex flex-col gap-4">
-                  <h3 className="text-[#30394A] text-xl font-bold leading-7">
-                    International Headquarters
-                  </h3>
-                  <div className="flex flex-col gap-2">
-                    <p className="text-[#30394A] text-xl leading-7">
-                      16 Hartum St, Har Hotzvim,
-                    </p>
-                    <p className="text-[#30394A] text-xl leading-7">
-                      Jerusalem 9777516, Israel
+                      Tel: {location.phone}
                     </p>
                   </div>
-                  <p className="text-[#30394A] text-xl leading-7">
-                    Tel: +972-2-5824030
-                  </p>
-                </div>
+                ))}
               </div>
             </div>
           </div>
@@ -241,10 +284,10 @@ export default function Contact() {
           <div className="w-[412px] flex-shrink-0 bg-white rounded-lg shadow-[0_0_20px_0_rgba(0,0,0,0.12)] p-8 overflow-y-auto">
             <div className="mb-8">
               <h2 className="text-[#30394A] text-2xl font-normal mb-0.5">
-                Get in touch
+                {GET_IN_TOUCH_SECTION.title}
               </h2>
               <p className="text-[#30394A] text-sm leading-[18px] whitespace-nowrap">
-                Help us improve our system by sharing your feedback.
+                {GET_IN_TOUCH_SECTION.subtitle}
               </p>
             </div>
 
@@ -252,7 +295,7 @@ export default function Contact() {
               {/* Name */}
               <div>
                 <label className="text-[#777786] text-sm px-2 block">
-                  Name
+                  {FORM_FIELDS.labels.name}
                 </label>
                 <Input
                   value={formData.name}
@@ -266,7 +309,7 @@ export default function Contact() {
               {/* Email */}
               <div>
                 <label className="text-[#777786] text-sm px-2 block">
-                  Email
+                  {FORM_FIELDS.labels.email}
                 </label>
                 <Input
                   type="email"
@@ -281,7 +324,7 @@ export default function Contact() {
               {/* Phone */}
               <div>
                 <label className="text-[#777786] text-sm px-2 block">
-                  Phone number
+                  {FORM_FIELDS.labels.phoneNumber}
                 </label>
                 <div className="flex gap-1.5">
                   <Select
@@ -294,9 +337,11 @@ export default function Contact() {
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="+1">+1</SelectItem>
-                      <SelectItem value="+44">+44</SelectItem>
-                      <SelectItem value="+972">+972</SelectItem>
+                      {FORM_FIELDS.phoneCountries.map((country) => (
+                        <SelectItem key={country.code} value={country.code}>
+                          {country.label}
+                        </SelectItem>
+                      ))}
                     </SelectContent>
                   </Select>
                   <Input
@@ -312,7 +357,7 @@ export default function Contact() {
               {/* Feedback Subject */}
               <div>
                 <label className="text-[#777786] text-sm px-2 block">
-                  Feedback subject
+                  {FORM_FIELDS.labels.feedbackSubject}
                 </label>
                 <Select
                   value={formData.subject}
@@ -321,12 +366,16 @@ export default function Contact() {
                   }
                 >
                   <SelectTrigger className="h-10 border-[#E1E1E4] rounded-lg text-[#B8B8C0]">
-                    <SelectValue placeholder="Select feedback" />
+                    <SelectValue
+                      placeholder={FORM_FIELDS.placeholders.feedbackSubject}
+                    />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="bug">Bug Report</SelectItem>
-                    <SelectItem value="feature">Feature Request</SelectItem>
-                    <SelectItem value="general">General Feedback</SelectItem>
+                    {FORM_FIELDS.feedbackSubjects.map((subject) => (
+                      <SelectItem key={subject.value} value={subject.value}>
+                        {subject.label}
+                      </SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
               </div>
@@ -334,14 +383,14 @@ export default function Contact() {
               {/* Message */}
               <div>
                 <label className="text-[#777786] text-sm px-2 block">
-                  Your message
+                  {FORM_FIELDS.labels.message}
                 </label>
                 <Textarea
                   value={formData.message}
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
                   }
-                  placeholder="Add note"
+                  placeholder={FORM_FIELDS.placeholders.message}
                   className="min-h-[124px] border-[#E1E1E4] rounded-lg placeholder:text-[#B8B8C0]"
                 />
               </div>
@@ -364,8 +413,7 @@ export default function Contact() {
                   htmlFor="contact-checkbox"
                   className="text-[#777786] text-base leading-5 cursor-pointer"
                 >
-                  I would like a BrainsWay representative to contact me
-                  regarding this message
+                  {FORM_FIELDS.labels.checkboxLabel}
                 </label>
               </div>
 
@@ -374,7 +422,7 @@ export default function Contact() {
                 type="submit"
                 className="w-full h-10 bg-[#005487] hover:bg-[#004070] text-white text-sm font-medium rounded-lg transition-colors mt-2"
               >
-                Send message
+                {GET_IN_TOUCH_SECTION.submitButtonText}
               </button>
             </form>
           </div>
@@ -382,7 +430,7 @@ export default function Contact() {
 
         {/* Version */}
         <div className="mt-6">
-          <p className="text-[#777786] text-base">Version 172.22</p>
+          <p className="text-[#777786] text-base">{PAGE_DATA.version}</p>
         </div>
       </div>
     </MainLayout>
