@@ -380,24 +380,22 @@ export function CreateProtocolDialog({
           </div>
 
           {/* Summary Section */}
-          <div className="flex items-center bg-[#F9F9F9] rounded border-t-[3px] border-t-[#005487] px-8 py-3">
-            <div className="flex items-center gap-10 w-fu ll px-8 py-3">
-              <div className="flex flex-col gap-0.5">
-                <span className="text-[34px] font-normal leading-[42px] text-[#005487]">
-                  {totalPulses}
-                </span>
-                <span className="text-base font-normal leading-5 text-[#005487]">
-                  Total number of pulses
-                </span>
-              </div>
-              <div className="flex flex-col gap-0.5">
-                <span className="text-[34px] font-normal leading-[42px] text-[#005487]">
-                  {totalTime}
-                </span>
-                <span className="text-base font-normal leading-5 text-[#005487]">
-                  Total time
-                </span>
-              </div>
+          <div className="flex items-center justify-between bg-[#F9F9F9] rounded border-t-[3px] border-t-[#005487] px-8 py-3">
+            <div className="flex flex-col gap-0.5">
+              <span className="text-[34px] font-normal leading-[42px] text-[#005487]">
+                {totalPulses}
+              </span>
+              <span className="text-base font-normal leading-5 text-[#005487]">
+                Total number of pulses
+              </span>
+            </div>
+            <div className="flex flex-col gap-0.5">
+              <span className="text-[34px] font-normal leading-[42px] text-[#005487]">
+                {totalTime}
+              </span>
+              <span className="text-base font-normal leading-5 text-[#005487]">
+                Total time
+              </span>
             </div>
           </div>
 
