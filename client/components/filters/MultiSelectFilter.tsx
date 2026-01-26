@@ -120,7 +120,7 @@ export function MultiSelectFilter({
                     />
                   </div>
                   <span className="text-[#777786] font-normal text-base leading-5">
-                    All conditions
+                    All {label.toLowerCase()}s
                   </span>
                 </div>
               </div>
