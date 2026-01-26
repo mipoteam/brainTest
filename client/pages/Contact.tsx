@@ -28,19 +28,19 @@ export default function Contact() {
 
   return (
     <MainLayout>
-      <div className="px-4 md:px-10 py-6 flex gap-8">
-        {/* Main Content */}
-        <div className="flex-1">
-          {/* Header */}
-          <div className="mb-10">
-            <h1 className="text-[#30394A] text-5xl font-normal mb-1">
-              Contact us
-            </h1>
-            <p className="text-[#30394A] text-base">We're here to help.</p>
-          </div>
+      <div className="px-4 md:px-10 py-6">
+        {/* Title */}
+        <div className="mb-10">
+          <h1 className="text-[#30394A] text-5xl font-normal mb-1">
+            Contact us
+          </h1>
+          <p className="text-[#30394A] text-base">We're here to help.</p>
+        </div>
 
+        {/* Content Wrapper */}
+        <div className="flex gap-8">
           {/* Support Section */}
-          <div className="bg-white rounded-lg shadow-[0_0_20px_0_rgba(0,0,0,0.12)] p-8 mb-8">
+          <div className="flex-1 bg-white rounded-lg shadow-[0_0_20px_0_rgba(0,0,0,0.12)] p-8 mb-8">
             <div className="flex items-start gap-8 mb-8">
               {/* Icon */}
               <div className="w-[52px] h-[52px] bg-[#DBEDF7] rounded-lg flex items-center justify-center flex-shrink-0">
