@@ -141,7 +141,7 @@ export function DataTable<
                   style={{ width: column.width }}
                 >
                   <div className="flex items-center gap-1">
-                    <span className="text-[#777786] font-normal text-base">
+                    <span className="text-[#777786] font-normal text-base whitespace-nowrap">
                       {column.header}
                     </span>
                     {column.sortable && (
