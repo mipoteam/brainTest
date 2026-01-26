@@ -6,10 +6,13 @@ import {
   Protocol,
   CoilType,
 } from "@/services/protocolsService";
-import { Plus, X, MessageSquare } from "lucide-react";
+import { Plus } from "lucide-react";
 import { CoilTags } from "@/components/CoilTag";
-import { SearchFilter } from "@/components/filters/SearchFilter";
-import { MultiSelectFilter, FilterOption } from "@/components/filters/MultiSelectFilter";
+import {
+  SearchFilter,
+  MultiSelectFilter,
+  FilterOption,
+} from "@/components/filters";
 
 export default function Protocols() {
   const allProtocols = getProtocols();
