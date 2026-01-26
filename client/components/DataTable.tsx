@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Lock } from "lucide-react";
 import { Pagination } from "./Pagination";
+import { Tooltip } from "./Tooltip";
 
 // Delete functionality for table row
 
