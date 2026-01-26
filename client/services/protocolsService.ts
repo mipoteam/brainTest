@@ -29,6 +29,8 @@ export const getProtocols = (): Protocol[] => {
       frequency: 10,
       mt: 120,
       totalTime: "00:37:02",
+      isLocked: true,
+      hasNote: true,
     },
     {
       id: "2",
@@ -41,6 +43,7 @@ export const getProtocols = (): Protocol[] => {
       frequency: 40,
       mt: 80,
       totalTime: "00:25:06",
+      isLocked: true,
     },
     {
       id: "3",
@@ -53,6 +56,8 @@ export const getProtocols = (): Protocol[] => {
       frequency: 10,
       mt: 120,
       totalTime: "00:25:06",
+      isLocked: true,
+      hasNote: true,
     },
     {
       id: "4",
