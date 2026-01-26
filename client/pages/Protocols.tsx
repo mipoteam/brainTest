@@ -1,11 +1,7 @@
 import { useState, useMemo } from "react";
 import { MainLayout } from "@/components/MainLayout";
 import { DataTable, Column } from "@/components/DataTable";
-import {
-  getProtocols,
-  Protocol,
-  CoilType,
-} from "@/services/protocolsService";
+import { getProtocols, Protocol, CoilType } from "@/services/protocolsService";
 import { Plus } from "lucide-react";
 import { CoilTags } from "@/components/CoilTag";
 import {
@@ -28,7 +24,7 @@ export default function Protocols() {
   // Extract unique filter options from data
   const conditionOptions: FilterOption[] = useMemo(() => {
     const conditions = Array.from(
-      new Set(allProtocols.map((p) => p.condition))
+      new Set(allProtocols.map((p) => p.condition)),
     ).sort();
     return conditions.map((c) => ({ value: c, label: c }));
   }, [allProtocols]);
@@ -65,7 +61,7 @@ export default function Protocols() {
       // Coil filter
       if (selectedCoils.length > 0) {
         const hasSelectedCoil = protocol.coils.some((coil) =>
-          selectedCoils.includes(coil)
+          selectedCoils.includes(coil),
         );
         if (!hasSelectedCoil) {
           return false;
@@ -79,7 +75,13 @@ export default function Protocols() {
 
       return true;
     });
-  }, [allProtocols, searchQuery, selectedConditions, selectedCoils, selectedTypes]);
+  }, [
+    allProtocols,
+    searchQuery,
+    selectedConditions,
+    selectedCoils,
+    selectedTypes,
+  ]);
 
   const totalCount = allProtocols.length;
   const filteredCount = filteredProtocols.length;

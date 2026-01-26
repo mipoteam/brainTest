@@ -27,7 +27,9 @@ interface DataTableProps<T> {
   showNoteColumn?: boolean;
 }
 
-export function DataTable<T extends { id: string; isLocked?: boolean; hasNote?: boolean }>({
+export function DataTable<
+  T extends { id: string; isLocked?: boolean; hasNote?: boolean },
+>({
   columns,
   data,
   onRowClick,

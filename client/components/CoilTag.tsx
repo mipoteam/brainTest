@@ -2,9 +2,9 @@ import { CoilType } from "@/services/protocolsService";
 
 // Mapping of coil types to their background colors
 const COIL_COLORS: Record<CoilType, string> = {
-  H1: "bg-[#88D3EE]",    // Light Blue
-  H4: "bg-[#6FD44B]",    // Green
-  H7: "bg-[#FFCE2D]",    // Yellow/Gold
+  H1: "bg-[#88D3EE]", // Light Blue
+  H4: "bg-[#6FD44B]", // Green
+  H7: "bg-[#FFCE2D]", // Yellow/Gold
   // Add more coil types and colors as needed
 };
 
