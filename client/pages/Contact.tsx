@@ -376,6 +376,11 @@ export default function Contact() {
             </form>
           </div>
         </div>
+
+        {/* Version */}
+        <div className="mt-6">
+          <p className="text-[#777786] text-base">Version 172.22</p>
+        </div>
       </div>
     </MainLayout>
   );
