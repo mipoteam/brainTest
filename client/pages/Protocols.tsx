@@ -139,7 +139,7 @@ export default function Protocols() {
     },
     {
       key: "frequency",
-      header: "Free (M)",
+      header: "Freq. (Hz)",
       width: "110px",
       sortable: true,
     },
