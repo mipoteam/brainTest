@@ -380,9 +380,8 @@ export function CreateProtocolDialog({
           </div>
 
           {/* Summary Section */}
-          <div className="flex items-center bg-[#F9F9F9] rounded overflow-hidden">
-            <div className="w-full h-[3px] bg-[#005487] absolute" />
-            <div className="flex items-center justify-between w-full px-8 py-3 pt-5">
+          <div className="flex items-center bg-[#F9F9F9] rounded overflow-hidden border-t-[3px] border-t-[#005487]">
+            <div className="flex items-center justify-between w-full px-8 py-3">
               <div className="flex flex-col gap-0.5">
                 <span className="text-[34px] font-normal leading-[42px] text-[#005487]">
                   {totalPulses}
