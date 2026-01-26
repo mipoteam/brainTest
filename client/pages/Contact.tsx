@@ -251,7 +251,7 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
               {/* Name */}
               <div>
-                <label className="text-[#777786] text-sm px-2 block mb-1">
+                <label className="text-[#777786] text-sm px-2 block">
                   Name
                 </label>
                 <Input
