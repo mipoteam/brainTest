@@ -127,11 +127,11 @@ export function DataTable<
   return (
     <div className="w-full">
       <div className="overflow-x-auto">
-        <table className="w-full border-collapse table-fixed">
+        <table className="w-full border-collapse">
           <thead>
             <tr className="border-b border-[#B8B8C0]">
               {showLockColumn && (
-                <th className="w-12 h-12 px-3">
+                <th className="w-8 h-12 px-2">
                   <div className="flex items-center justify-center"></div>
                 </th>
               )}
@@ -139,7 +139,7 @@ export function DataTable<
                 <th
                   key={index}
                   className="h-12 px-3 text-left"
-                  style={{ width: column.width }}
+                  style={{ minWidth: "max-content" }}
                 >
                   <div className="flex items-center gap-1">
                     <span className="text-[#777786] font-normal text-base whitespace-nowrap">
@@ -183,8 +183,8 @@ export function DataTable<
                   </div>
                 </th>
               ))}
-              {showNoteColumn && <th className="w-18 h-12 px-2"></th>}
-              {actions && <th className="w-20"></th>}
+              {showNoteColumn && <th className="w-8 h-12 px-2"></th>}
+              {actions && <th className="w-16"></th>}
             </tr>
           </thead>
           <tbody>
@@ -201,7 +201,7 @@ export function DataTable<
                   onClick={() => onRowClick?.(row)}
                 >
                   {showLockColumn && (
-                    <td className="h-12 px-2">
+                    <td className="h-12 px-1">
                       <div className="w-full h-full flex items-center justify-center">
                         {row.isLocked && (
                           <Lock className="w-5 h-5 text-[#777786]" />
@@ -220,12 +220,12 @@ export function DataTable<
                     );
                   })}
                   {showNoteColumn && (
-                    <td className="h-12 px-2">
+                    <td className="h-12 px-1">
                       <div className="w-full h-full flex items-center justify-center">
                         {row.hasNote && (
                           <svg
-                            width="24"
-                            height="24"
+                            width="20"
+                            height="20"
                             viewBox="0 0 24 24"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
@@ -255,14 +255,14 @@ export function DataTable<
                   )}
                   {actions && (
                     <td className="h-12 px-0">
-                      <div className="flex items-center h-full">
+                      <div className="flex items-center h-full gap-0">
                         {actions.onCopy && (
                           <button
                             onClick={(e) => {
                               e.stopPropagation();
                               actions.onCopy?.(row);
                             }}
-                            className={`w-10 h-full flex items-center justify-center transition-all ${
+                            className={`w-8 h-full flex items-center justify-center transition-all ${
                               isHovered
                                 ? "opacity-100"
                                 : "opacity-0 pointer-events-none"
@@ -270,8 +270,8 @@ export function DataTable<
                             title="Copy protocol"
                           >
                             <svg
-                              width="24"
-                              height="24"
+                              width="20"
+                              height="20"
                               viewBox="0 0 24 24"
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
@@ -293,15 +293,15 @@ export function DataTable<
                                 e.stopPropagation();
                                 handleDelete(row);
                               }}
-                              className={`w-10 h-full flex items-center justify-center transition-all ${
+                              className={`w-8 h-full flex items-center justify-center transition-all ${
                                 isHovered
                                   ? "opacity-100"
                                   : "opacity-0 pointer-events-none"
                               } hover:opacity-70`}
                             >
                               <svg
-                                width="24"
-                                height="24"
+                                width="20"
+                                height="20"
                                 viewBox="0 0 24 24"
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg"
