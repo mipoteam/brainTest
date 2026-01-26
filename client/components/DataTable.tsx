@@ -127,11 +127,11 @@ export function DataTable<T extends { id: string; isLocked?: boolean; hasNote?: 
         <table className="w-full border-collapse table-fixed">
           <thead>
             <tr className="border-b border-[#B8B8C0]">
-              <th className="w-12 h-12 px-3">
-                <div className="flex items-center justify-center">
-                  <Lock className="w-5 h-5 text-brand-blue" />
-                </div>
-              </th>
+              {showLockColumn && (
+                <th className="w-12 h-12 px-3">
+                  <div className="flex items-center justify-center"></div>
+                </th>
+              )}
               {columns.map((column, index) => (
                 <th
                   key={index}
@@ -160,8 +160,8 @@ export function DataTable<T extends { id: string; isLocked?: boolean; hasNote?: 
                               fill={
                                 sortConfig?.key === column.key &&
                                 sortConfig?.direction === "asc"
-                                  ? "#101128"
-                                  : "#B7BABA"
+                                  ? "#30394A"
+                                  : "#B8B8C0"
                               }
                             />
                             <path
@@ -169,8 +169,8 @@ export function DataTable<T extends { id: string; isLocked?: boolean; hasNote?: 
                               fill={
                                 sortConfig?.key === column.key &&
                                 sortConfig?.direction === "desc"
-                                  ? "#101128"
-                                  : "#B7BABA"
+                                  ? "#30394A"
+                                  : "#B8B8C0"
                               }
                             />
                           </svg>
@@ -180,6 +180,7 @@ export function DataTable<T extends { id: string; isLocked?: boolean; hasNote?: 
                   </div>
                 </th>
               ))}
+              {showNoteColumn && <th className="w-18 h-12 px-2"></th>}
               {actions && <th className="w-20"></th>}
             </tr>
           </thead>
