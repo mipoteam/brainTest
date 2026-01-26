@@ -71,7 +71,7 @@ export function MultiSelectFilter({
       <div className="relative">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center gap-1 h-10 px-3 border border-[#E1E1E4] rounded bg-white hover:bg-gray-50 transition-colors min-w-[180px]"
+          className="flex items-center gap-1 h-10 px-3 border border-[#E1E1E4] rounded bg-white hover:bg-gray-50 transition-colors min-w-[229px]"
         >
           <div className="flex items-center gap-1 flex-1">
             {selected.length === 0 ? (
