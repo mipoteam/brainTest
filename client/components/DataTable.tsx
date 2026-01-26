@@ -139,7 +139,7 @@ export function DataTable<
                 <th
                   key={index}
                   className="h-12 px-3 text-left"
-                  style={{ minWidth: column.width || "100px" }}
+                  style={{ minWidth: "max-content" }}
                 >
                   <div className="flex items-center gap-1">
                     <span className="text-[#777786] font-normal text-base whitespace-nowrap">
