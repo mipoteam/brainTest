@@ -27,7 +27,7 @@ export function ValueCard({
         className,
       )}
     >
-      <div className="flex-1 flex flex-col p-2 px-3 gap-0.5">
+      <div className="flex-1 flex flex-col p-2 px-3 pr-0 gap-0.5">
         <div className="flex items-end gap-0.5">
           <span className="text-[34px] font-normal leading-[42px] text-[#005487]">
             {typeof value === 'number' && value % 1 !== 0 ? value.toFixed(1) : value}
