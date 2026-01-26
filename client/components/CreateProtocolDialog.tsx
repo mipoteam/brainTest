@@ -278,13 +278,13 @@ export function CreateProtocolDialog({
                 onIncrement={() =>
                   setFormData({
                     ...formData,
-                    frequency: formData.frequency + 0.1,
+                    frequency: Number((formData.frequency + 0.1).toFixed(1)),
                   })
                 }
                 onDecrement={() =>
                   setFormData({
                     ...formData,
-                    frequency: Math.max(0, formData.frequency - 0.1),
+                    frequency: Math.max(0, Number((formData.frequency - 0.1).toFixed(1))),
                   })
                 }
                 className="w-[180px]"
@@ -296,13 +296,13 @@ export function CreateProtocolDialog({
                 onIncrement={() =>
                   setFormData({
                     ...formData,
-                    trainDuration: formData.trainDuration + 0.1,
+                    trainDuration: Number((formData.trainDuration + 0.1).toFixed(1)),
                   })
                 }
                 onDecrement={() =>
                   setFormData({
                     ...formData,
-                    trainDuration: Math.max(0, formData.trainDuration - 0.1),
+                    trainDuration: Math.max(0, Number((formData.trainDuration - 0.1).toFixed(1))),
                   })
                 }
                 className="w-[180px]"
@@ -334,7 +334,7 @@ export function CreateProtocolDialog({
                 onIncrement={() =>
                   setFormData({
                     ...formData,
-                    interTrainInterval: formData.interTrainInterval + 0.1,
+                    interTrainInterval: Number((formData.interTrainInterval + 0.1).toFixed(1)),
                   })
                 }
                 onDecrement={() =>
@@ -342,7 +342,7 @@ export function CreateProtocolDialog({
                     ...formData,
                     interTrainInterval: Math.max(
                       0,
-                      formData.interTrainInterval - 0.1,
+                      Number((formData.interTrainInterval - 0.1).toFixed(1)),
                     ),
                   })
                 }
