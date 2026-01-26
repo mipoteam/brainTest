@@ -11,6 +11,8 @@ export interface Protocol {
   frequency: number;
   mt: number;
   totalTime: string;
+  isLocked?: boolean;
+  hasNote?: boolean;
 }
 
 // Hardcoded protocols data - this will later be replaced with API calls
