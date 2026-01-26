@@ -103,56 +103,47 @@ export default function Protocols() {
     {
       key: "protocolName",
       header: "Protocol name",
-      width: "162px",
       sortable: true,
     },
     {
       key: "condition",
       header: "Condition",
-      width: "145px",
       sortable: true,
     },
     {
       key: "coils",
       header: "Coil",
-      width: "110px",
       sortable: false,
       render: (coils: CoilType[]) => <CoilTags coils={coils} />,
     },
     {
       key: "type",
       header: "Type",
-      width: "121px",
       sortable: true,
     },
     {
       key: "createdBy",
       header: "Created by",
-      width: "224px",
       sortable: true,
     },
     {
       key: "lastModified",
       header: "Last modified",
-      width: "311px",
       sortable: true,
     },
     {
       key: "frequency",
       header: "Freq. (Hz)",
-      width: "110px",
       sortable: true,
     },
     {
       key: "mt",
       header: "MT (%)",
-      width: "110px",
       sortable: true,
     },
     {
       key: "totalTime",
       header: "Total time",
-      width: "110px",
       sortable: true,
     },
   ];
