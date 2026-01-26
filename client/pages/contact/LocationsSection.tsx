@@ -78,10 +78,7 @@ export default function LocationsSection() {
             </h3>
             <div className="flex flex-col gap-2">
               {location.address.map((line, lineIndex) => (
-                <p
-                  key={lineIndex}
-                  className="text-[#30394A] text-xl leading-7"
-                >
+                <p key={lineIndex} className="text-[#30394A] text-xl leading-7">
                   {line}
                 </p>
               ))}

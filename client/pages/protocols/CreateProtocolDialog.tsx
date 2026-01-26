@@ -283,7 +283,10 @@ export function CreateProtocolDialog({
                   onDecrement={() =>
                     setFormData({
                       ...formData,
-                      frequency: Math.max(0, Number((formData.frequency - 0.1).toFixed(1))),
+                      frequency: Math.max(
+                        0,
+                        Number((formData.frequency - 0.1).toFixed(1)),
+                      ),
                     })
                   }
                   className="w-[180px]"
@@ -297,13 +300,18 @@ export function CreateProtocolDialog({
                   onIncrement={() =>
                     setFormData({
                       ...formData,
-                      trainDuration: Number((formData.trainDuration + 0.1).toFixed(1)),
+                      trainDuration: Number(
+                        (formData.trainDuration + 0.1).toFixed(1),
+                      ),
                     })
                   }
                   onDecrement={() =>
                     setFormData({
                       ...formData,
-                      trainDuration: Math.max(0, Number((formData.trainDuration - 0.1).toFixed(1))),
+                      trainDuration: Math.max(
+                        0,
+                        Number((formData.trainDuration - 0.1).toFixed(1)),
+                      ),
                     })
                   }
                   className="w-[180px]"
@@ -339,7 +347,9 @@ export function CreateProtocolDialog({
                   onIncrement={() =>
                     setFormData({
                       ...formData,
-                      interTrainInterval: Number((formData.interTrainInterval + 0.1).toFixed(1)),
+                      interTrainInterval: Number(
+                        (formData.interTrainInterval + 0.1).toFixed(1),
+                      ),
                     })
                   }
                   onDecrement={() =>
@@ -384,7 +394,10 @@ export function CreateProtocolDialog({
                     setFormData({ ...formData, mt: formData.mt + 1 })
                   }
                   onDecrement={() =>
-                    setFormData({ ...formData, mt: Math.max(0, formData.mt - 1) })
+                    setFormData({
+                      ...formData,
+                      mt: Math.max(0, formData.mt - 1),
+                    })
                   }
                   className="w-[180px]"
                 />

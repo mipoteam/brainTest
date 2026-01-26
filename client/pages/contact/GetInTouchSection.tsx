@@ -78,9 +78,7 @@ export default function GetInTouchSection() {
           </label>
           <Input
             value={formData.name}
-            onChange={(e) =>
-              setFormData({ ...formData, name: e.target.value })
-            }
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             className="h-10 border-[#E1E1E4] rounded-lg"
           />
         </div>
