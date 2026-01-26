@@ -27,7 +27,7 @@ interface DataTableProps<T> {
   showNoteColumn?: boolean;
 }
 
-export function DataTable<T extends { id: string }>({
+export function DataTable<T extends { id: string; isLocked?: boolean; hasNote?: boolean }>({
   columns,
   data,
   onRowClick,
@@ -35,6 +35,8 @@ export function DataTable<T extends { id: string }>({
   itemsPerPage,
   currentPage: externalCurrentPage,
   onPageChange: externalOnPageChange,
+  showLockColumn = true,
+  showNoteColumn = false,
 }: DataTableProps<T>) {
   const [hoveredRow, setHoveredRow] = useState<string | null>(null);
   const [displayedData, setDisplayedData] = useState<T[]>(data);
