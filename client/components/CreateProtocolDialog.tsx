@@ -267,7 +267,7 @@ export function CreateProtocolDialog({
           {/* Value Cards Section */}
           <div className="flex flex-col gap-2">
             {/* Row 1 */}
-            <div className="flex items-center gap-3 bg-[#F9F9F9] p-2 rounded">
+            <div className="flex items-center gap-3">
               <ValueCard
                 value={formData.frequency}
                 unit="Hz"
@@ -284,7 +284,7 @@ export function CreateProtocolDialog({
                     frequency: Math.max(0, Number((formData.frequency - 0.1).toFixed(1))),
                   })
                 }
-                className="w-[180px]"
+                className="w-[180px] bg-[#F9F9F9]"
               />
               <ValueCard
                 value={formData.trainDuration}
@@ -302,7 +302,7 @@ export function CreateProtocolDialog({
                     trainDuration: Math.max(0, Number((formData.trainDuration - 0.1).toFixed(1))),
                   })
                 }
-                className="w-[180px]"
+                className="w-[180px] bg-[#F9F9F9]"
               />
               <div className="flex items-center bg-[#F9F9F9] rounded overflow-hidden">
                 <div className="w-[3px] h-20 bg-[#005487]" />
@@ -323,7 +323,7 @@ export function CreateProtocolDialog({
             </div>
 
             {/* Row 2 */}
-            <div className="flex items-center gap-3 bg-[#F9F9F9] p-2 rounded">
+            <div className="flex items-center gap-3">
               <ValueCard
                 value={formData.interTrainInterval}
                 unit="Sec"
@@ -343,7 +343,7 @@ export function CreateProtocolDialog({
                     ),
                   })
                 }
-                className="w-[180px]"
+                className="w-[180px] bg-[#F9F9F9]"
               />
               <ValueCard
                 value={formData.trains}
@@ -358,12 +358,12 @@ export function CreateProtocolDialog({
                     trains: Math.max(1, formData.trains - 1),
                   })
                 }
-                className="w-[180px]"
+                className="w-[180px] bg-[#F9F9F9]"
               />
             </div>
 
             {/* Row 3 */}
-            <div className="flex items-center gap-3 bg-[#F9F9F9] p-2 rounded">
+            <div className="flex items-center gap-3">
               <ValueCard
                 value={formData.mt}
                 unit="%"
@@ -374,13 +374,13 @@ export function CreateProtocolDialog({
                 onDecrement={() =>
                   setFormData({ ...formData, mt: Math.max(0, formData.mt - 1) })
                 }
-                className="w-[180px]"
+                className="w-[180px] bg-[#F9F9F9]"
               />
             </div>
           </div>
 
           {/* Summary Section */}
-          <div className="flex items-center bg-[#F9F9F9] rounded border-t-[3px] border-t-[#005487]">
+          <div className="flex items-center bg-[#F9F9F9] rounded border-t-[3px] border-t-[#005487] px-8 py-3">
             <div className="flex items-center gap-10 w-fu ll px-8 py-3">
               <div className="flex flex-col gap-0.5">
                 <span className="text-[34px] font-normal leading-[42px] text-[#005487]">
