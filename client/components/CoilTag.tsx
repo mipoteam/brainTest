@@ -1,11 +1,19 @@
 import { CoilType } from "@/services/protocolsService";
 
+// Mapping of coil types to their background colors
+const COIL_COLORS: Record<CoilType, string> = {
+  H1: "bg-[#88D3EE]",    // Light Blue
+  H4: "bg-[#6FD44B]",    // Green
+  H7: "bg-[#FFCE2D]",    // Yellow/Gold
+  // Add more coil types and colors as needed
+};
+
 interface CoilTagProps {
   type: CoilType;
 }
 
 export function CoilTag({ type }: CoilTagProps) {
-  const bgColor = type === "H1" ? "bg-[#88D3EE]" : "bg-[#6FD44B]";
+  const bgColor = COIL_COLORS[type] || "bg-[#B8B8C0]"; // Fallback to gray for unknown types
 
   return (
     <div
