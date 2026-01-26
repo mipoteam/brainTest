@@ -38,7 +38,7 @@ export default function Contact() {
         </div>
 
         {/* Content Wrapper */}
-        <div className="flex gap-8">
+        <div className="flex gap-8 h-[736px]">
           {/* Left Column - Support and Locations */}
           <div className="flex-1 flex flex-col gap-8">
             {/* Support Section */}
