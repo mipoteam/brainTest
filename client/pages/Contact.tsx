@@ -184,7 +184,7 @@ export default function Contact() {
                   <p className="text-[#777786] text-sm font-medium tracking-[1.4px] uppercase mb-2">
                     LOCATIONS
                   </p>
-                  <h2 className="text-[#30394A] text-2xl font-normal mb-8">
+                  <h2 className="text-[#30394A] text-2xl font-normal mb-2">
                     Learn more about BrainsWay
                   </h2>
                   <a
