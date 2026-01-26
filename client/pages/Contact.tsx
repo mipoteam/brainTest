@@ -265,7 +265,7 @@ export default function Contact() {
 
               {/* Email */}
               <div>
-                <label className="text-[#777786] text-sm px-2 block mb-1">
+                <label className="text-[#777786] text-sm px-2 block">
                   Email
                 </label>
                 <Input
