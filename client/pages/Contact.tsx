@@ -243,7 +243,7 @@ export default function Contact() {
               <h2 className="text-[#30394A] text-2xl font-normal mb-0.5">
                 Get in touch
               </h2>
-              <p className="text-[#30394A] text-sm leading-[18px]">
+              <p className="text-[#30394A] text-xs leading-4">
                 Help us improve our system by sharing your feedback.
               </p>
             </div>
