@@ -327,7 +327,7 @@ export function CreateProtocolDialog({
             </div>
 
             {/* Row 2 */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center">
               <div className="bg-[#F9F9F9] p-2 rounded">
                 <ValueCard
                   value={formData.interTrainInterval}
@@ -371,7 +371,7 @@ export function CreateProtocolDialog({
             </div>
 
             {/* Row 3 */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center">
               <div className="bg-[#F9F9F9] p-2 rounded">
                 <ValueCard
                   value={formData.mt}
