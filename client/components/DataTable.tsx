@@ -190,30 +190,66 @@ export function DataTable<T extends { id: string; isLocked?: boolean; hasNote?: 
               return (
                 <tr
                   key={row.id}
-                  className={`border-b border-[#A7A7B1] cursor-pointer transition-colors ${
+                  className={`border-b border-[#E1E1E4] cursor-pointer transition-colors ${
                     isHovered ? "bg-[#ECF7FB]" : ""
                   }`}
                   onMouseEnter={() => setHoveredRow(row.id)}
                   onMouseLeave={() => setHoveredRow(null)}
                   onClick={() => onRowClick?.(row)}
                 >
-                  <td
-                    className={`h-12 px-3 ${isHovered ? "bg-[#ECF7FB]" : ""}`}
-                  >
-                    <div className="w-full h-full flex items-center justify-center">
-                      {/* Empty lock column cell */}
-                    </div>
-                  </td>
+                  {showLockColumn && (
+                    <td className="h-12 px-2">
+                      <div className="w-full h-full flex items-center justify-center">
+                        {row.isLocked && (
+                          <Lock className="w-5 h-5 text-[#777786]" />
+                        )}
+                      </div>
+                    </td>
+                  )}
                   {columns.map((column, colIndex) => {
                     const value = getValue(row, column.key as string);
                     return (
                       <td key={colIndex} className="h-12 px-3">
-                        <div className="text-[#101128] font-normal text-base overflow-hidden text-ellipsis whitespace-nowrap">
+                        <div className="text-[#30394A] font-normal text-base overflow-hidden text-ellipsis whitespace-nowrap">
                           {column.render ? column.render(value, row) : value}
                         </div>
                       </td>
                     );
                   })}
+                  {showNoteColumn && (
+                    <td className="h-12 px-2">
+                      <div className="w-full h-full flex items-center justify-center">
+                        {row.hasNote && (
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M5.34766 5H18.6523C18.755 5 18.835 5.03818 18.8926 5.09766C18.9512 5.1582 19 5.25593 19 5.3916V19.8594L15.7578 17.1465C15.6003 17.0147 15.4063 16.9348 15.2031 16.917L15.1162 16.9131H5.34766C5.245 16.9131 5.16502 16.8749 5.10742 16.8154C5.04883 16.7549 5 16.6572 5 16.5215V5.3916C5 5.25593 5.04884 5.1582 5.10742 5.09766C5.16502 5.03818 5.245 5 5.34766 5Z"
+                              stroke="#777786"
+                              strokeWidth="2"
+                              strokeMiterlimit="10"
+                              strokeLinecap="square"
+                              strokeLinejoin="round"
+                            />
+                            <path
+                              d="M8 9L16 9"
+                              stroke="#777786"
+                              strokeWidth="2"
+                            />
+                            <path
+                              d="M8 13L14 13"
+                              stroke="#777786"
+                              strokeWidth="2"
+                            />
+                          </svg>
+                        )}
+                      </div>
+                    </td>
+                  )}
                   {actions && (
                     <td className="h-12">
                       {isHovered && (
