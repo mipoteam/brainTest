@@ -284,65 +284,59 @@ export function DataTable<
                           </button>
                         )}
                         {actions?.onDelete && (
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              handleDelete(row);
-                            }}
-                            className={`w-10 h-full flex items-center justify-center transition-all ${
-                              isHovered
-                                ? "opacity-100"
-                                : "opacity-0 pointer-events-none"
-                            } hover:opacity-70`}
-                            title="Delete protocol"
-                          >
-                            <svg
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
+                          <Tooltip content="Delete protocol">
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleDelete(row);
+                              }}
+                              className={`w-10 h-full flex items-center justify-center transition-all ${
+                                isHovered
+                                  ? "opacity-100"
+                                  : "opacity-0 pointer-events-none"
+                              } hover:opacity-70`}
                             >
-                              <rect
+                              <svg
                                 width="24"
                                 height="24"
-                                rx="4"
-                                fill="#E1E1E4"
-                                fillOpacity="0.9"
-                              />
-                              <path
-                                d="M13.5859 4L14.5859 5H9.41406L10.4141 4H13.5859Z"
-                                stroke="#005487"
-                                strokeWidth="2"
-                              />
-                              <path
-                                d="M14 17V11"
-                                stroke="#005487"
-                                strokeWidth="2"
-                              />
-                              <path
-                                d="M10 17V11"
-                                stroke="#005487"
-                                strokeWidth="2"
-                              />
-                              <path
-                                d="M4 6L20 6"
-                                stroke="#005487"
-                                strokeWidth="2"
-                                strokeLinejoin="round"
-                              />
-                              <rect
-                                x="5"
-                                y="6"
-                                width="14"
-                                height="15"
-                                rx="1"
-                                stroke="#005487"
-                                strokeWidth="2"
-                                strokeLinejoin="round"
-                              />
-                            </svg>
-                          </button>
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M13.5859 4L14.5859 5H9.41406L10.4141 4H13.5859Z"
+                                  stroke="black"
+                                  strokeWidth="2"
+                                />
+                                <path
+                                  d="M14 17V11"
+                                  stroke="black"
+                                  strokeWidth="2"
+                                />
+                                <path
+                                  d="M10 17V11"
+                                  stroke="black"
+                                  strokeWidth="2"
+                                />
+                                <path
+                                  d="M4 6L20 6"
+                                  stroke="black"
+                                  strokeWidth="2"
+                                  strokeLinejoin="round"
+                                />
+                                <rect
+                                  x="5"
+                                  y="6"
+                                  width="14"
+                                  height="15"
+                                  rx="1"
+                                  stroke="black"
+                                  strokeWidth="2"
+                                  strokeLinejoin="round"
+                                />
+                              </svg>
+                            </button>
+                          </Tooltip>
                         )}
                       </div>
                     </td>
