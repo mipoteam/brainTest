@@ -9,11 +9,15 @@ import {
   MultiSelectFilter,
   FilterOption,
 } from "@/components/filters";
+import { CreateProtocolDialog } from "@/components/CreateProtocolDialog";
 
 export default function Protocols() {
   const allProtocols = getProtocols();
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
+
+  // Dialog state
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   // Filter states
   const [searchQuery, setSearchQuery] = useState("");
@@ -167,6 +171,10 @@ export default function Protocols() {
 
   return (
     <MainLayout>
+      <CreateProtocolDialog
+        open={isDialogOpen}
+        onOpenChange={setIsDialogOpen}
+      />
       <div className="px-4 md:px-10 py-6">
         {/* Page Header */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
@@ -176,7 +184,10 @@ export default function Protocols() {
             </h1>
           </div>
           <div className="flex items-center gap-3.5">
-            <button className="h-10 px-4 flex items-center gap-2 bg-brand-blue hover:bg-brand-blue/90 rounded-lg transition-colors">
+            <button
+              onClick={() => setIsDialogOpen(true)}
+              className="h-10 px-4 flex items-center gap-2 bg-brand-blue hover:bg-brand-blue/90 rounded-lg transition-colors"
+            >
               <Plus className="w-5 h-5 text-white" />
               <span className="text-white text-sm font-medium leading-5 tracking-[0.5px] capitalize">
                 Create protocol
