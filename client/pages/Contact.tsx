@@ -311,7 +311,7 @@ export default function Contact() {
 
               {/* Feedback Subject */}
               <div>
-                <label className="text-[#777786] text-sm px-2 block mb-1.5">
+                <label className="text-[#777786] text-sm px-2 block">
                   Feedback subject
                 </label>
                 <Select
