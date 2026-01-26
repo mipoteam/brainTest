@@ -11,7 +11,7 @@ import Dashboard from "./pages/Dashboard";
 import Analytics from "./pages/Analytics";
 import Patients from "./pages/patients/Patients";
 import Settings from "./pages/Settings";
-import Contact from "./pages/Contact";
+import Contact from "./pages/contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
