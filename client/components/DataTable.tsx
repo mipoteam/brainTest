@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Copy, Trash2, Lock, MessageSquare } from "lucide-react";
+import { Lock } from "lucide-react";
 import { Pagination } from "./Pagination";
 
 // Delete functionality for table row
