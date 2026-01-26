@@ -267,7 +267,7 @@ export function CreateProtocolDialog({
           {/* Value Cards Section */}
           <div className="flex flex-col gap-2">
             {/* Row 1 */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center">
               <div className="bg-[#F9F9F9] p-2 rounded">
                 <ValueCard
                   value={formData.frequency}
@@ -308,9 +308,9 @@ export function CreateProtocolDialog({
                   className="w-[180px]"
                 />
               </div>
-              <div className="flex items-center bg-[#F9F9F9] rounded overflow-hidden">
-                <div className="w-[3px] h-20 bg-[#005487]" />
-                <div className="flex flex-col px-3 py-2 gap-0.5">
+              <div className="flex items-start bg-[#F9F9F9] rounded overflow-hidden p-3">
+                <div className="w-[3px] self-stretch bg-[#005487] mr-3" />
+                <div className="flex flex-col gap-0.5">
                   <div className="flex items-end gap-0.5">
                     <span className="text-[34px] font-normal leading-[42px] text-[#005487]">
                       {pulsesPerTrain.toFixed(1)}
