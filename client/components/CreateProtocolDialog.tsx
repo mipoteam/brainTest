@@ -30,7 +30,6 @@ interface ProtocolFormData {
   protocolType: "standard" | "theta-burst";
   frequency: number;
   trainDuration: number;
-  pulsesPerTrain: number;
   interTrainInterval: number;
   trains: number;
   mt: number;
@@ -52,7 +51,6 @@ export function CreateProtocolDialog({
     protocolType: "standard",
     frequency: 10.0,
     trainDuration: 2.0,
-    pulsesPerTrain: 20.0,
     interTrainInterval: 10.0,
     trains: 4,
     mt: 80,
@@ -62,8 +60,9 @@ export function CreateProtocolDialog({
   const [errors, setErrors] = useState<FormErrors>({});
   const [attemptedSubmit, setAttemptedSubmit] = useState(false);
 
-  // Calculate totals
-  const totalPulses = formData.pulsesPerTrain * formData.trains;
+  // Calculate values
+  const pulsesPerTrain = formData.frequency * formData.trainDuration;
+  const totalPulses = pulsesPerTrain * formData.trains;
   const totalTimeInSeconds =
     formData.trains * formData.trainDuration +
     (formData.trains - 1) * formData.interTrainInterval;
@@ -102,7 +101,6 @@ export function CreateProtocolDialog({
         protocolType: "standard",
         frequency: 10.0,
         trainDuration: 2.0,
-        pulsesPerTrain: 20.0,
         interTrainInterval: 10.0,
         trains: 4,
         mt: 80,
@@ -122,7 +120,6 @@ export function CreateProtocolDialog({
       protocolType: "standard",
       frequency: 10.0,
       trainDuration: 2.0,
-      pulsesPerTrain: 20.0,
       interTrainInterval: 10.0,
       trains: 4,
       mt: 80,
@@ -312,7 +309,7 @@ export function CreateProtocolDialog({
                 <div className="flex flex-col px-3 py-2 gap-0.5">
                   <div className="flex items-end gap-0.5">
                     <span className="text-[34px] font-normal leading-[42px] text-[#005487]">
-                      {formData.pulsesPerTrain}
+                      {pulsesPerTrain.toFixed(1)}
                     </span>
                     <span className="text-base font-normal leading-5 text-[#005487] pb-2">
                       No.
