@@ -139,11 +139,11 @@ export function CreateProtocolDialog({
         onInteractOutside={(e) => e.preventDefault()}
       >
         {/* Custom Header */}
-        <div className="flex items-center justify-between bg-[#005487] px-8 py-4 h-[72px]">
+        <div className="relative flex items-center bg-[#005487] px-8 py-4 h-[72px]">
           <h2 className="text-white text-xl font-bold">Create protocol</h2>
           <button
             onClick={handleCancel}
-            className="flex items-center justify-center p-2 hover:bg-white/10 rounded transition-colors"
+            className="absolute right-8 flex items-center justify-center p-2 hover:bg-white/10 rounded transition-colors"
           >
             <X className="w-4 h-4 text-[#A7A7B1]" />
           </button>
