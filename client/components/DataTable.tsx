@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { Copy, Trash2, Lock, MessageSquare } from "lucide-react";
+import { Lock } from "lucide-react";
 import { Pagination } from "./Pagination";
+import { Tooltip } from "./Tooltip";
 
 // Delete functionality for table row
 
@@ -141,7 +142,7 @@ export function DataTable<
                   style={{ width: column.width }}
                 >
                   <div className="flex items-center gap-1">
-                    <span className="text-[#777786] font-normal text-base">
+                    <span className="text-[#777786] font-normal text-base whitespace-nowrap">
                       {column.header}
                     </span>
                     {column.sortable && (
@@ -253,33 +254,94 @@ export function DataTable<
                     </td>
                   )}
                   {actions && (
-                    <td className="h-12">
-                      {isHovered && (
-                        <div className="flex items-center">
-                          {actions.onCopy && (
-                            <button
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                actions.onCopy?.(row);
-                              }}
-                              className="w-10 h-12 flex items-center justify-center hover:bg-brand-gray-100 transition-colors"
+                    <td className="h-12 px-0">
+                      <div className="flex items-center h-full">
+                        {actions.onCopy && (
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              actions.onCopy?.(row);
+                            }}
+                            className={`w-10 h-full flex items-center justify-center transition-all ${
+                              isHovered
+                                ? "opacity-100"
+                                : "opacity-0 pointer-events-none"
+                            } hover:opacity-70`}
+                            title="Copy protocol"
+                          >
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <Copy className="w-5 h-5 text-[#777786]" />
-                            </button>
-                          )}
-                          {actions?.onDelete && (
+                              <path
+                                d="M5.88235 21C5.36471 21 4.92141 20.8239 4.55247 20.4717C4.18416 20.1189 4 19.695 4 19.2V6.6H5.88235V19.2H16.2353V21H5.88235ZM9.64706 17.4C9.12941 17.4 8.68643 17.2239 8.31812 16.8717C7.94918 16.5189 7.76471 16.095 7.76471 15.6V4.8C7.76471 4.305 7.94918 3.8811 8.31812 3.5283C8.68643 3.1761 9.12941 3 9.64706 3H18.1176C18.6353 3 19.0786 3.1761 19.4475 3.5283C19.8158 3.8811 20 4.305 20 4.8V15.6C20 16.095 19.8158 16.5189 19.4475 16.8717C19.0786 17.2239 18.6353 17.4 18.1176 17.4H9.64706ZM9.64706 15.6H18.1176V4.8H9.64706V15.6Z"
+                                fill="black"
+                              />
+                            </svg>
+                          </button>
+                        )}
+                        {actions?.onDelete && (
+                          <Tooltip
+                            content="Delete protocol"
+                            position="top-right"
+                          >
                             <button
                               onClick={(e) => {
                                 e.stopPropagation();
                                 handleDelete(row);
                               }}
-                              className="w-10 h-12 flex items-center justify-center hover:bg-brand-gray-100 transition-colors"
+                              className={`w-10 h-full flex items-center justify-center transition-all ${
+                                isHovered
+                                  ? "opacity-100"
+                                  : "opacity-0 pointer-events-none"
+                              } hover:opacity-70`}
                             >
-                              <Trash2 className="w-5 h-5 text-[#777786]" />
+                              <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M13.5859 4L14.5859 5H9.41406L10.4141 4H13.5859Z"
+                                  stroke="black"
+                                  strokeWidth="2"
+                                />
+                                <path
+                                  d="M14 17V11"
+                                  stroke="black"
+                                  strokeWidth="2"
+                                />
+                                <path
+                                  d="M10 17V11"
+                                  stroke="black"
+                                  strokeWidth="2"
+                                />
+                                <path
+                                  d="M4 6L20 6"
+                                  stroke="black"
+                                  strokeWidth="2"
+                                  strokeLinejoin="round"
+                                />
+                                <rect
+                                  x="5"
+                                  y="6"
+                                  width="14"
+                                  height="15"
+                                  rx="1"
+                                  stroke="black"
+                                  strokeWidth="2"
+                                  strokeLinejoin="round"
+                                />
+                              </svg>
                             </button>
-                          )}
-                        </div>
-                      )}
+                          </Tooltip>
+                        )}
+                      </div>
                     </td>
                   )}
                 </tr>
