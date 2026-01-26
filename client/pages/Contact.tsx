@@ -280,7 +280,7 @@ export default function Contact() {
 
               {/* Phone */}
               <div>
-                <label className="text-[#777786] text-sm px-2 block mb-1.5">
+                <label className="text-[#777786] text-sm px-2 block">
                   Phone number
                 </label>
                 <div className="flex gap-1.5">
