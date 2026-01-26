@@ -30,7 +30,7 @@ export function ValueCard({
       <div className="flex-1 flex flex-col p-2 px-3 gap-0.5">
         <div className="flex items-end gap-0.5">
           <span className="text-[34px] font-normal leading-[42px] text-[#005487]">
-            {value}
+            {typeof value === 'number' && value % 1 !== 0 ? value.toFixed(1) : value}
           </span>
           <span className="text-sm font-normal leading-[18px] text-[#005487] pb-1.5">
             {unit}
