@@ -308,20 +308,22 @@ export function CreateProtocolDialog({
                   className="w-[180px]"
                 />
               </div>
-              <div className="flex items-start bg-[#F9F9F9] rounded overflow-hidden p-3">
-                <div className="w-[3px] self-stretch bg-[#005487] mr-3" />
-                <div className="flex flex-col gap-0.5">
-                  <div className="flex items-end gap-0.5">
-                    <span className="text-[34px] font-normal leading-[42px] text-[#005487]">
-                      {pulsesPerTrain.toFixed(1)}
-                    </span>
-                    <span className="text-base font-normal leading-5 text-[#005487] pb-2">
-                      No.
+              <div className="px-3">
+                <div className="flex items-start bg-[#F9F9F9] rounded overflow-hidden">
+                  <div className="w-[3px] self-stretch bg-[#005487]" />
+                  <div className="w-[157px] h-20 flex flex-col p-2 px-3 pb-3 rounded">
+                    <div className="flex items-end gap-0.5">
+                      <span className="text-[34px] font-normal leading-[42px] text-[#005487]">
+                        {pulsesPerTrain.toFixed(1)}
+                      </span>
+                      <span className="text-base font-normal leading-5 text-[#005487] pb-2">
+                        No.
+                      </span>
+                    </div>
+                    <span className="text-base font-normal leading-5 text-[#005487]">
+                      Pulses per train
                     </span>
                   </div>
-                  <span className="text-base font-normal leading-5 text-[#005487]">
-                    Pulses per train
-                  </span>
                 </div>
               </div>
             </div>
