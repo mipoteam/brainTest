@@ -284,7 +284,10 @@ export function DataTable<
                           </button>
                         )}
                         {actions?.onDelete && (
-                          <Tooltip content="Delete protocol" position="top-right">
+                          <Tooltip
+                            content="Delete protocol"
+                            position="top-right"
+                          >
                             <button
                               onClick={(e) => {
                                 e.stopPropagation();

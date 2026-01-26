@@ -3,14 +3,18 @@ import { useState } from "react";
 interface TooltipProps {
   content: string;
   children: React.ReactNode;
-  position?: "top" | "top-right" | "top-left" | "bottom" | "bottom-right" | "bottom-left" | "left" | "right";
+  position?:
+    | "top"
+    | "top-right"
+    | "top-left"
+    | "bottom"
+    | "bottom-right"
+    | "bottom-left"
+    | "left"
+    | "right";
 }
 
-export function Tooltip({
-  content,
-  children,
-  position = "top",
-}: TooltipProps) {
+export function Tooltip({ content, children, position = "top" }: TooltipProps) {
   const [isVisible, setIsVisible] = useState(false);
 
   const positionClasses = {
