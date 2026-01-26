@@ -127,7 +127,7 @@ export function DataTable<
   return (
     <div className="w-full">
       <div className="overflow-x-auto">
-        <table className="w-full border-collapse table-fixed">
+        <table className="w-full border-collapse">
           <thead>
             <tr className="border-b border-[#B8B8C0]">
               {showLockColumn && (
@@ -139,7 +139,7 @@ export function DataTable<
                 <th
                   key={index}
                   className="h-12 px-3 text-left"
-                  style={{ width: column.width }}
+                  style={{ minWidth: column.width || "100px" }}
                 >
                   <div className="flex items-center gap-1">
                     <span className="text-[#777786] font-normal text-base whitespace-nowrap">
