@@ -265,7 +265,7 @@ export function CreateProtocolDialog({
           <div className="w-full h-px bg-[#E1E1E4]" />
 
           {/* Value Cards Section */}
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col">
             {/* Row 1 */}
             <div className="flex items-center">
               <div className="bg-[#F9F9F9] p-2 rounded">
