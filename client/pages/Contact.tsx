@@ -333,7 +333,7 @@ export default function Contact() {
 
               {/* Message */}
               <div>
-                <label className="text-[#777786] text-sm px-2 block mb-1">
+                <label className="text-[#777786] text-sm px-2 block">
                   Your message
                 </label>
                 <Textarea
