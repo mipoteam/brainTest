@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Copy, Trash2, Lock } from "lucide-react";
+import { Copy, Trash2, Lock, MessageSquare } from "lucide-react";
 import { Pagination } from "./Pagination";
 
 // Delete functionality for table row
@@ -23,6 +23,8 @@ interface DataTableProps<T> {
   itemsPerPage?: number;
   currentPage?: number;
   onPageChange?: (page: number) => void;
+  showLockColumn?: boolean;
+  showNoteColumn?: boolean;
 }
 
 export function DataTable<T extends { id: string }>({
