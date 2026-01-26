@@ -110,12 +110,15 @@ export function MultiSelectFilter({
           <div className="absolute top-full left-0 mt-1 w-[265px] bg-white border border-[#E1E1E4] rounded-lg shadow-[1px_1px_4px_0_rgba(0,0,0,0.08)] z-50 overflow-hidden">
             <div className="p-1 flex flex-col gap-1">
               {/* All options checkbox */}
-              <div className="flex items-center h-10 px-3 border-b border-[#E1E1E4]">
-                <div className="flex items-center gap-1.5">
-                  <Checkbox
-                    checked={selected.length === options.length}
-                    onCheckedChange={handleSelectAll}
-                  />
+              <div className="flex items-center h-10 pl-3 pr-3 border-b border-[#E1E1E4]">
+                <div className="flex items-center gap-1.5 w-full">
+                  <div className="w-6 h-6 flex items-center justify-center">
+                    <Checkbox
+                      checked={selected.length === options.length}
+                      onCheckedChange={handleSelectAll}
+                      className="w-[18px] h-[18px] rounded-sm border-[1.5px] border-[#B8B8C0] data-[state=checked]:bg-[#005487] data-[state=checked]:border-[#005487]"
+                    />
+                  </div>
                   <span className="text-[#777786] font-normal text-base leading-5">
                     All conditions
                   </span>
