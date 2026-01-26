@@ -39,197 +39,200 @@ export default function Contact() {
 
         {/* Content Wrapper */}
         <div className="flex gap-8">
-          {/* Support Section */}
-          <div className="flex-1 bg-white rounded-lg shadow-[0_0_20px_0_rgba(0,0,0,0.12)] p-8 mb-8">
-            <div className="flex items-start gap-8 mb-8">
-              {/* Icon */}
-              <div className="w-[52px] h-[52px] bg-[#DBEDF7] rounded-lg flex items-center justify-center flex-shrink-0">
-                <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1 17V29"
-                    stroke="#005487"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M9.35 20H1V27H24V25.5C24 24.3954 23.1046 23.5 22 23.5H11.35V22C11.35 20.8954 10.4546 20 9.35 20Z"
-                    fill="#DAEFF8"
-                  />
-                  <path
-                    d="M7.325 23.5H11.35M11.35 23.5H22C23.1046 23.5 24 24.3954 24 25.5V27H1V20H9.35C10.4546 20 11.35 20.8954 11.35 22V23.5Z"
-                    stroke="#005487"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M28.3332 4H14.7142C14.0304 4 13.4761 4.51167 13.4761 5.14286V14.8571C13.4761 15.4883 14.0304 16 14.7142 16H28.3332C29.017 16 29.5713 15.4883 29.5713 14.8571V5.14286C29.5713 4.51167 29.017 4 28.3332 4Z"
-                    fill="white"
-                    stroke="#005487"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M14.4759 4L20.7867 9.29325C20.9802 9.4517 21.2241 9.53846 21.4759 9.53846C21.7278 9.53846 21.9716 9.4517 22.1652 9.29325L28.4759 4"
-                    fill="#DBEDF7"
-                    stroke="#005487"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
+          {/* Left Column - Support and Locations */}
+          <div className="flex-1 flex flex-col gap-8">
+            {/* Support Section */}
+            <div className="bg-white rounded-lg shadow-[0_0_20px_0_rgba(0,0,0,0.12)] p-8">
+              <div className="flex items-start gap-8 mb-8">
+                {/* Icon */}
+                <div className="w-[52px] h-[52px] bg-[#DBEDF7] rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 17V29"
+                      stroke="#005487"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M9.35 20H1V27H24V25.5C24 24.3954 23.1046 23.5 22 23.5H11.35V22C11.35 20.8954 10.4546 20 9.35 20Z"
+                      fill="#DAEFF8"
+                    />
+                    <path
+                      d="M7.325 23.5H11.35M11.35 23.5H22C23.1046 23.5 24 24.3954 24 25.5V27H1V20H9.35C10.4546 20 11.35 20.8954 11.35 22V23.5Z"
+                      stroke="#005487"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M28.3332 4H14.7142C14.0304 4 13.4761 4.51167 13.4761 5.14286V14.8571C13.4761 15.4883 14.0304 16 14.7142 16H28.3332C29.017 16 29.5713 15.4883 29.5713 14.8571V5.14286C29.5713 4.51167 29.017 4 28.3332 4Z"
+                      fill="white"
+                      stroke="#005487"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M14.4759 4L20.7867 9.29325C20.9802 9.4517 21.2241 9.53846 21.4759 9.53846C21.7278 9.53846 21.9716 9.4517 22.1652 9.29325L28.4759 4"
+                      fill="#DBEDF7"
+                      stroke="#005487"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
 
-              {/* Title */}
-              <div>
-                <p className="text-[#777786] text-sm font-medium tracking-[1.4px] uppercase mb-2">
-                  SUPPORT
-                </p>
-                <h2 className="text-[#30394A] text-2xl font-normal">
-                  Get help using BrainsWay
-                </h2>
-              </div>
-            </div>
-
-            {/* Support Items */}
-            <div className="flex gap-[72px] pl-[86px]">
-              <div className="flex flex-col gap-2">
-                <h3 className="text-[#30394A] text-xl font-bold leading-7">
-                  General Inquiries & Sales
-                </h3>
-                <a
-                  href="mailto:DeepTMS@brainsway.com"
-                  className="text-[#005487] text-xl leading-7 hover:underline"
-                >
-                  DeepTMS@brainsway.com
-                </a>
-                <p className="text-[#30394A] text-xl leading-7">
-                  Tel: 844-386-7001 ext 2
-                </p>
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <h3 className="text-[#30394A] text-xl font-bold leading-7">
-                  Service/Maintenance
-                </h3>
-                <a
-                  href="mailto:service@brainsway.com"
-                  className="text-[#005487] text-xl leading-7 hover:underline"
-                >
-                  service@brainsway.com
-                </a>
-                <p className="text-[#30394A] text-xl leading-7">
-                  Tel: 844-386-7001 ext 3
-                </p>
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <h3 className="text-[#30394A] text-xl font-bold leading-7">
-                  Reimbursement Support (U.S.)
-                </h3>
-                <a
-                  href="mailto:reimbursement@brainsway.com"
-                  className="text-[#005487] text-xl leading-7 hover:underline"
-                >
-                  reimbursement@brainsway.com
-                </a>
-                <p className="text-[#30394A] text-xl leading-7">
-                  Tel: 844-386-7001 ext 4
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Locations Section */}
-          <div className="flex-1 bg-white rounded-lg shadow-[0_0_20px_0_rgba(0,0,0,0.12)] p-8">
-            <div className="flex items-start gap-8 mb-8">
-              {/* Icon */}
-              <div className="w-[52px] h-[52px] bg-[#DBEDF7] rounded-lg flex items-center justify-center flex-shrink-0">
-                <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0 0L16 1.39876e-06"
-                    stroke="#005487"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    transform="translate(8, 29)"
-                  />
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M10.5243 23.5977C12.5828 22.3146 20 17.1932 20 10.0095C20 4.4814 15.5228 0 10 0C4.47717 0 0 4.4814 0 10.0095C0 17.1932 7.41717 22.3146 9.47572 23.5977C9.80161 23.8008 10.1984 23.8008 10.5243 23.5977ZM9.99989 12.5C11.3806 12.5 12.4999 11.3807 12.4999 9.99999C12.4999 8.61928 11.3806 7.49999 9.99989 7.49999C8.61918 7.49999 7.49989 8.61928 7.49989 9.99999C7.49989 11.3807 8.61918 12.5 9.99989 12.5Z"
-                    fill="white"
-                    stroke="#005487"
-                    strokeWidth="2"
-                    transform="translate(6, 2)"
-                  />
-                </svg>
-              </div>
-
-              {/* Title */}
-              <div>
-                <p className="text-[#777786] text-sm font-medium tracking-[1.4px] uppercase mb-2">
-                  LOCATIONS
-                </p>
-                <h2 className="text-[#30394A] text-2xl font-normal mb-8">
-                  Learn more about BrainsWay
-                </h2>
-                <a
-                  href="https://www.brainsway.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#005487] text-xl leading-7 hover:underline"
-                >
-                  www.brainsway.com
-                </a>
-              </div>
-            </div>
-
-            {/* Location Items */}
-            <div className="flex gap-[72px] pl-[86px]">
-              <div className="flex flex-col gap-4">
-                <h3 className="text-[#30394A] text-xl font-bold leading-7">
-                  U.S. Headquarters
-                </h3>
-                <div className="flex flex-col gap-2">
-                  <p className="text-[#30394A] text-xl leading-7">
-                    95 Washington Street, Suite 224-323
+                {/* Title */}
+                <div>
+                  <p className="text-[#777786] text-sm font-medium tracking-[1.4px] uppercase mb-2">
+                    SUPPORT
                   </p>
+                  <h2 className="text-[#30394A] text-2xl font-normal">
+                    Get help using BrainsWay
+                  </h2>
+                </div>
+              </div>
+
+              {/* Support Items */}
+              <div className="flex gap-[72px] pl-[86px]">
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-[#30394A] text-xl font-bold leading-7">
+                    General Inquiries & Sales
+                  </h3>
+                  <a
+                    href="mailto:DeepTMS@brainsway.com"
+                    className="text-[#005487] text-xl leading-7 hover:underline"
+                  >
+                    DeepTMS@brainsway.com
+                  </a>
                   <p className="text-[#30394A] text-xl leading-7">
-                    Canton, MA 020
+                    Tel: 844-386-7001 ext 2
                   </p>
                 </div>
-                <p className="text-[#30394A] text-xl leading-7">
-                  Tel: 844-386-7001
-                </p>
-              </div>
 
-              <div className="flex flex-col gap-4">
-                <h3 className="text-[#30394A] text-xl font-bold leading-7">
-                  International Headquarters
-                </h3>
                 <div className="flex flex-col gap-2">
+                  <h3 className="text-[#30394A] text-xl font-bold leading-7">
+                    Service/Maintenance
+                  </h3>
+                  <a
+                    href="mailto:service@brainsway.com"
+                    className="text-[#005487] text-xl leading-7 hover:underline"
+                  >
+                    service@brainsway.com
+                  </a>
                   <p className="text-[#30394A] text-xl leading-7">
-                    16 Hartum St, Har Hotzvim,
-                  </p>
-                  <p className="text-[#30394A] text-xl leading-7">
-                    Jerusalem 9777516, Israel
+                    Tel: 844-386-7001 ext 3
                   </p>
                 </div>
-                <p className="text-[#30394A] text-xl leading-7">
-                  Tel: +972-2-5824030
-                </p>
+
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-[#30394A] text-xl font-bold leading-7">
+                    Reimbursement Support (U.S.)
+                  </h3>
+                  <a
+                    href="mailto:reimbursement@brainsway.com"
+                    className="text-[#005487] text-xl leading-7 hover:underline"
+                  >
+                    reimbursement@brainsway.com
+                  </a>
+                  <p className="text-[#30394A] text-xl leading-7">
+                    Tel: 844-386-7001 ext 4
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Locations Section */}
+            <div className="bg-white rounded-lg shadow-[0_0_20px_0_rgba(0,0,0,0.12)] p-8">
+              <div className="flex items-start gap-8 mb-8">
+                {/* Icon */}
+                <div className="w-[52px] h-[52px] bg-[#DBEDF7] rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0L16 1.39876e-06"
+                      stroke="#005487"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      transform="translate(8, 29)"
+                    />
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M10.5243 23.5977C12.5828 22.3146 20 17.1932 20 10.0095C20 4.4814 15.5228 0 10 0C4.47717 0 0 4.4814 0 10.0095C0 17.1932 7.41717 22.3146 9.47572 23.5977C9.80161 23.8008 10.1984 23.8008 10.5243 23.5977ZM9.99989 12.5C11.3806 12.5 12.4999 11.3807 12.4999 9.99999C12.4999 8.61928 11.3806 7.49999 9.99989 7.49999C8.61918 7.49999 7.49989 8.61928 7.49989 9.99999C7.49989 11.3807 8.61918 12.5 9.99989 12.5Z"
+                      fill="white"
+                      stroke="#005487"
+                      strokeWidth="2"
+                      transform="translate(6, 2)"
+                    />
+                  </svg>
+                </div>
+
+                {/* Title */}
+                <div>
+                  <p className="text-[#777786] text-sm font-medium tracking-[1.4px] uppercase mb-2">
+                    LOCATIONS
+                  </p>
+                  <h2 className="text-[#30394A] text-2xl font-normal mb-8">
+                    Learn more about BrainsWay
+                  </h2>
+                  <a
+                    href="https://www.brainsway.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#005487] text-xl leading-7 hover:underline"
+                  >
+                    www.brainsway.com
+                  </a>
+                </div>
+              </div>
+
+              {/* Location Items */}
+              <div className="flex gap-[72px] pl-[86px]">
+                <div className="flex flex-col gap-4">
+                  <h3 className="text-[#30394A] text-xl font-bold leading-7">
+                    U.S. Headquarters
+                  </h3>
+                  <div className="flex flex-col gap-2">
+                    <p className="text-[#30394A] text-xl leading-7">
+                      95 Washington Street, Suite 224-323
+                    </p>
+                    <p className="text-[#30394A] text-xl leading-7">
+                      Canton, MA 020
+                    </p>
+                  </div>
+                  <p className="text-[#30394A] text-xl leading-7">
+                    Tel: 844-386-7001
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-4">
+                  <h3 className="text-[#30394A] text-xl font-bold leading-7">
+                    International Headquarters
+                  </h3>
+                  <div className="flex flex-col gap-2">
+                    <p className="text-[#30394A] text-xl leading-7">
+                      16 Hartum St, Har Hotzvim,
+                    </p>
+                    <p className="text-[#30394A] text-xl leading-7">
+                      Jerusalem 9777516, Israel
+                    </p>
+                  </div>
+                  <p className="text-[#30394A] text-xl leading-7">
+                    Tel: +972-2-5824030
+                  </p>
+                </div>
               </div>
             </div>
           </div>
