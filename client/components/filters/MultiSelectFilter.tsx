@@ -58,6 +58,9 @@ export function MultiSelectFilter({
     }
   };
 
+  const displayedChips = selected.slice(0, 2);
+  const remainingCount = selected.length - displayedChips.length;
+
   return (
     <div className="flex items-center gap-0" ref={dropdownRef}>
       <div className="flex items-center py-2.5 px-2">
@@ -85,7 +88,7 @@ export function MultiSelectFilter({
               </span>
             ) : (
               <div className="flex flex-1 items-center gap-1 whitespace-nowrap">
-                {selected.map((value) => (
+                {displayedChips.map((value) => (
                   <FilterChip
                     key={value}
                     label={
@@ -94,6 +97,13 @@ export function MultiSelectFilter({
                     onRemove={() => handleRemove(value)}
                   />
                 ))}
+                {remainingCount > 0 && (
+                  <div className="inline-flex h-6 px-2 justify-center items-center rounded-lg bg-[#DBEDF7] shrink-0">
+                    <span className="text-[#30394A] font-normal text-sm leading-[18px]">
+                      +{remainingCount}
+                    </span>
+                  </div>
+                )}
               </div>
             )}
           </div>
