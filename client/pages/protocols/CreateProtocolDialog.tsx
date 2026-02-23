@@ -235,7 +235,7 @@ export function CreateProtocolDialog({
                   <RadioGroupItem
                     value="standard"
                     id="standard"
-                    className="w-6 h-6 border-[1.5px] border-[#005487] data-[state=checked]:border-[#005487]"
+                    className="w-6 h-6 border-[1.5px] border-[#005487] text-[#005487] data-[state=checked]:border-[#005487]"
                   />
                   <label
                     htmlFor="standard"
@@ -248,7 +248,7 @@ export function CreateProtocolDialog({
                   <RadioGroupItem
                     value="theta-burst"
                     id="theta-burst"
-                    className="w-6 h-6 border-[1.5px] border-[#A7A7B1] data-[state=checked]:border-[#005487]"
+                    className="w-6 h-6 border-[1.5px] border-[#A7A7B1] text-[#A7A7B1] data-[state=checked]:border-[#005487] data-[state=checked]:text-[#005487]"
                     disabled
                   />
                   <label
