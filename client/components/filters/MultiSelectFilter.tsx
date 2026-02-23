@@ -69,9 +69,17 @@ export function MultiSelectFilter({
         </span>
       </div>
       <div className="relative">
-        <button
+        <div
+          role="button"
+          tabIndex={0}
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center gap-1 h-10 px-3 border border-[#E1E1E4] rounded bg-white hover:bg-gray-50 transition-colors min-w-[229px]"
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              setIsOpen(!isOpen);
+            }
+          }}
+          className="flex items-center gap-1 h-10 px-3 border border-[#E1E1E4] rounded bg-white hover:bg-gray-50 transition-colors min-w-[229px] cursor-pointer"
         >
           <div className="flex items-center gap-1 flex-1">
             {selected.length === 0 ? (
@@ -104,7 +112,7 @@ export function MultiSelectFilter({
           ) : (
             <ChevronDown className="w-6 h-6 text-[#777786] flex-shrink-0" />
           )}
-        </button>
+        </div>
 
         {isOpen && (
           <div className="absolute top-full left-0 mt-1 w-[265px] bg-white border border-[#E1E1E4] rounded-lg shadow-[1px_1px_4px_0_rgba(0,0,0,0.08)] z-50 overflow-hidden">
