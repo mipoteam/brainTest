@@ -23,7 +23,7 @@ const SUPPORT_SECTION = {
 
 export default function SupportSection() {
   return (
-    <div className="flex-1 bg-white rounded-lg shadow-[0_0_20px_0_rgba(0,0,0,0.12)] p-8 overflow-y-auto">
+    <div className="bg-white rounded-lg shadow-[0_0_20px_0_rgba(0,0,0,0.12)] p-8 overflow-y-auto">
       <div className="flex items-start gap-8 mb-8">
         {/* Icon */}
         <div className="w-[52px] h-[52px] bg-[#DBEDF7] rounded-lg flex items-center justify-center flex-shrink-0">
