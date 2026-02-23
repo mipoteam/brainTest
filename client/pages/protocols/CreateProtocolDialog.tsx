@@ -140,7 +140,7 @@ export function CreateProtocolDialog({
       >
         {/* Custom Header */}
         <div className="relative flex items-center bg-[#005487] px-8 py-4 h-[72px]">
-          <h2 className="text-white text-xl font-bold">Create protocol</h2>
+          <DialogTitle className="text-white text-xl font-bold">Create protocol</DialogTitle>
           <button
             onClick={handleCancel}
             className="absolute right-8 flex items-center justify-center p-2 hover:bg-white/10 rounded transition-colors"
