@@ -178,7 +178,7 @@ export function ClinicDetail({ clinic }: ClinicDetailProps) {
           <MapPinIcon />
           <span className="text-[#30394A] text-xs">{clinic.address}</span>
         </div>
-        <div className="flex items-center gap-1.5 mb-3">
+        <div className="flex items-center gap-1.5">
           <GlobeIcon />
           <span className="text-[#30394A] text-xs">{clinic.website}</span>
         </div>
