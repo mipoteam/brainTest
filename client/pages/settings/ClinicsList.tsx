@@ -37,7 +37,7 @@ export function ClinicsList({ clinics, selectedId, onSelect }: ClinicsListProps)
         {/* Super admins button */}
         <button className="flex items-center gap-2 px-4 py-2 border border-[#005487] rounded-lg hover:bg-[#ECF7FB] transition-colors">
           <Crown className="w-4 h-4 text-[#005487]" />
-          <span className="text-[#005487] text-base font-medium">Super admins (3)</span>
+          <span className="text-[#005487] text-sm font-medium">Super admins (3)</span>
         </button>
       </div>
 
