@@ -75,7 +75,7 @@ export function ClinicsList({ clinics, selectedId, onSelect }: ClinicsListProps)
                 key={clinic.id}
                 onClick={() => onSelect(clinic)}
                 className={cn(
-                  "w-full grid grid-cols-[2fr_1fr_1fr_2fr] gap-2 pr-6 py-3 text-left transition-colors hover:bg-[#ECF7FB]",
+                  "w-full grid grid-cols-[2fr_1fr_1fr_2fr] gap-2 pr-6 py-3 border-b border-[#E1E1E4] text-left transition-colors hover:bg-[#ECF7FB]",
                   isSelected && "bg-[#ECF7FB]"
                 )}
               >
