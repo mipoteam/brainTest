@@ -84,7 +84,7 @@ function DevicePanel({ device }: { device: DeviceInfo }) {
         </div>
 
         {/* Coil */}
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 border-l border-r border-[#E1E1E4] px-6">
           <span className="text-[#101128] text-sm font-bold">Coil</span>
           <div className="flex flex-col gap-2 mt-1">
             {device.coils.map((coil, i) => (
@@ -154,7 +154,7 @@ export function ClinicDetail({ clinic }: ClinicDetailProps) {
 
       {/* Device sub-tabs */}
       <div>
-        <div className="flex">
+        <div className="flex border-b border-[#B8B8C0]">
           {clinic.deviceList.map((device, index) => (
             <button
               key={device.name}
