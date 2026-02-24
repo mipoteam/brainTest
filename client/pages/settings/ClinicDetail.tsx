@@ -164,7 +164,7 @@ export function ClinicDetail({ clinic }: ClinicDetailProps) {
           <span className="text-[#777786] text-xs font-normal">Site ID</span>
           <span className="text-[#101128] text-xs font-bold">{clinic.siteId}</span>
         </div>
-        <div className="flex items-center gap-6 mb-1.5">
+        <div className="flex items-center gap-6 mb-3">
           <div className="flex items-center gap-1.5">
             <PhoneIcon />
             <span className="text-[#30394A] text-xs">{clinic.phone}</span>
@@ -174,11 +174,11 @@ export function ClinicDetail({ clinic }: ClinicDetailProps) {
             <span className="text-[#30394A] text-xs">{clinic.email}</span>
           </div>
         </div>
-        <div className="flex items-center gap-1.5 mb-1.5">
+        <div className="flex items-center gap-1.5 mb-3">
           <MapPinIcon />
           <span className="text-[#30394A] text-xs">{clinic.address}</span>
         </div>
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-1.5 mb-3">
           <GlobeIcon />
           <span className="text-[#30394A] text-xs">{clinic.website}</span>
         </div>
