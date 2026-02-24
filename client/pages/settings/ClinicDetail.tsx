@@ -27,7 +27,7 @@ function DevicePanel({ device }: { device: DeviceInfo }) {
   return (
     <div>
       {/* Device ID + Download log */}
-      <div className="flex items-center justify-between py-4 border-b border-[#E1E1E4]">
+      <div className="flex items-center justify-between py-4">
         <div className="flex items-center gap-2">
           <span className="text-[#777786] text-sm font-normal">Device ID</span>
           <span className="text-[#101128] text-sm font-bold">{device.deviceId}</span>
@@ -126,7 +126,7 @@ export function ClinicDetail({ clinic }: ClinicDetailProps) {
   return (
     <div className="flex flex-col gap-4">
       {/* Site info */}
-      <div className="pb-4 border-b border-[#E1E1E4]">
+      <div className="pb-4">
         <div className="flex items-center gap-2 mb-3">
           <h3 className="text-[#101128] text-base font-bold">{clinic.name}</h3>
           <span className="text-[#777786] text-xs font-normal">Site ID</span>
@@ -154,7 +154,7 @@ export function ClinicDetail({ clinic }: ClinicDetailProps) {
 
       {/* Device sub-tabs */}
       <div>
-        <div className="flex border-b border-[#E1E1E4]">
+        <div className="flex">
           {clinic.deviceList.map((device, index) => (
             <button
               key={device.name}

@@ -19,7 +19,7 @@ export function ClinicsList({ clinics, selectedId, onSelect }: ClinicsListProps)
   return (
     <div className="flex flex-col gap-4">
       {/* Header row */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between px-6">
         <div className="flex items-center gap-2">
           {/* Clinic icon */}
           <div className="w-8 h-8 rounded bg-[#ECF7FB] flex items-center justify-center">
@@ -44,7 +44,7 @@ export function ClinicsList({ clinics, selectedId, onSelect }: ClinicsListProps)
       </div>
 
       {/* Search */}
-      <div className="relative">
+      <div className="relative mx-6">
         <input
           type="text"
           value={search}
@@ -58,7 +58,7 @@ export function ClinicsList({ clinics, selectedId, onSelect }: ClinicsListProps)
       {/* Table */}
       <div>
         {/* Table header */}
-        <div className="grid grid-cols-[2fr_1fr_1fr_2fr] gap-2 px-2 py-2 border-b border-[#E1E1E4]">
+        <div className="grid grid-cols-[2fr_1fr_1fr_2fr] gap-2 px-6 py-2 border-b border-[#E1E1E4]">
           {["Site Name", "Site ID", "Devices", "Address"].map((col) => (
             <span key={col} className="text-[#777786] text-xs font-normal">
               {col}
@@ -67,17 +67,18 @@ export function ClinicsList({ clinics, selectedId, onSelect }: ClinicsListProps)
         </div>
 
         {/* Table rows */}
-        {filtered.map((clinic) => {
-          const isSelected = clinic.id === selectedId;
-          return (
-            <button
-              key={clinic.id}
-              onClick={() => onSelect(clinic)}
-              className={cn(
-                "w-full grid grid-cols-[2fr_1fr_1fr_2fr] gap-2 px-2 py-3 border-b border-[#E1E1E4] text-left transition-colors hover:bg-[#ECF7FB]",
-                isSelected && "bg-[#ECF7FB]"
-              )}
-            >
+        <div className="flex flex-col">
+          {filtered.map((clinic) => {
+            const isSelected = clinic.id === selectedId;
+            return (
+              <button
+                key={clinic.id}
+                onClick={() => onSelect(clinic)}
+                className={cn(
+                  "w-full grid grid-cols-[2fr_1fr_1fr_2fr] gap-2 px-6 py-3 text-left transition-colors hover:bg-[#ECF7FB]",
+                  isSelected && "bg-[#ECF7FB]"
+                )}
+              >
               <span
                 className={cn(
                   "text-sm font-normal truncate",
@@ -89,9 +90,10 @@ export function ClinicsList({ clinics, selectedId, onSelect }: ClinicsListProps)
               <span className="text-[#30394A] text-sm font-normal">{clinic.siteId}</span>
               <span className="text-[#30394A] text-sm font-normal">{clinic.devices}</span>
               <span className="text-[#777786] text-sm font-normal truncate">{clinic.address}</span>
-            </button>
-          );
-        })}
+              </button>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
