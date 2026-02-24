@@ -29,7 +29,7 @@ export function ClinicsList({ clinics, selectedId, onSelect }: ClinicsListProps)
               <path d="M9 21V15H15V21" stroke="#005487" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </div>
-          <span className="text-[#101128] text-base font-bold">
+          <span className="text-[#30394A] text-[24px] font-normal">
             Clinics ({clinics.length})
           </span>
         </div>
@@ -89,7 +89,7 @@ export function ClinicsList({ clinics, selectedId, onSelect }: ClinicsListProps)
               </span>
               <span className="text-[#30394A] text-base font-normal">{clinic.siteId}</span>
               <span className="text-[#30394A] text-base font-normal">{clinic.devices}</span>
-              <span className="text-[#777786] text-base font-normal truncate">{clinic.address}</span>
+              <span className="text-[#30394A] text-base font-normal truncate">{clinic.address}</span>
               </button>
             );
           })}

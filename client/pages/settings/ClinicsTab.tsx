@@ -17,9 +17,9 @@ export function ClinicsTab() {
         <div className="w-12 h-12 rounded bg-[#F7F8FC] flex items-center justify-center shrink-0">
           <span className="text-[#B8B8C0] text-xs font-normal">LOGO</span>
         </div>
-        <span className="text-[#101128] text-base font-bold">{organization.name}</span>
-        <span className="text-[#005487] text-sm font-normal ml-4">{organization.email}</span>
-        <span className="text-[#005487] text-sm font-normal">{organization.website}</span>
+        <span className="text-[#30394A] text-[24px] font-normal">{organization.name}</span>
+        <span className="text-[#005487] text-base font-normal ml-4">{organization.email}</span>
+        <span className="text-[#005487] text-base font-normal">{organization.website}</span>
       </div>
 
       {/* Split layout: clinics list + detail */}
