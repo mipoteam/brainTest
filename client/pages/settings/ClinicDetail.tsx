@@ -158,7 +158,7 @@ export function ClinicDetail({ clinic }: ClinicDetailProps) {
   return (
     <div className="bg-white rounded-lg p-6 flex flex-col gap-4">
       {/* Site info */}
-      <div className="pb-4">
+      <div className="pb-4 border-b border-[#E1E1E4]">
         <div className="flex items-center gap-2 mb-3">
           <h3 className="text-[#101128] text-base font-bold">{clinic.name}</h3>
           <span className="text-[#777786] text-xs font-normal">Site ID</span>
