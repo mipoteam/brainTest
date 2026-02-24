@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Search } from "lucide-react";
+import { Search, Crown } from "lucide-react";
 import { Clinic } from "@/data/settingsData";
 import { cn } from "@/lib/utils";
 
@@ -35,11 +35,9 @@ export function ClinicsList({ clinics, selectedId, onSelect }: ClinicsListProps)
         </div>
 
         {/* Super admins button */}
-        <button className="flex items-center gap-1.5 px-3 py-1.5 border border-[#E1E1E4] rounded-lg hover:bg-gray-50 transition-colors">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2L13.09 8.26L19 6L15.45 11.27L21 13.5L15.45 15.73L19 21L13.09 18.74L12 25L10.91 18.74L5 21L8.55 15.73L3 13.5L8.55 11.27L5 6L10.91 8.26L12 2Z" stroke="#005487" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          <span className="text-[#005487] text-sm font-normal">Super admins (3)</span>
+        <button className="flex items-center gap-2 px-4 py-2 border border-[#005487] rounded-lg hover:bg-[#ECF7FB] transition-colors">
+          <Crown className="w-4 h-4 text-[#005487]" />
+          <span className="text-[#005487] text-base font-medium">Super admins (3)</span>
         </button>
       </div>
 
@@ -79,12 +77,7 @@ export function ClinicsList({ clinics, selectedId, onSelect }: ClinicsListProps)
                   isSelected && "bg-[#ECF7FB]"
                 )}
               >
-              <span
-                className={cn(
-                  "text-base font-normal truncate",
-                  isSelected ? "text-[#005487] font-medium" : "text-[#30394A]"
-                )}
-              >
+              <span className="text-[#30394A] text-base font-normal truncate">
                 {clinic.name}
               </span>
               <span className="text-[#30394A] text-base font-normal">{clinic.siteId}</span>

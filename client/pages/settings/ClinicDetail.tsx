@@ -160,27 +160,27 @@ export function ClinicDetail({ clinic }: ClinicDetailProps) {
       {/* Site info */}
       <div className="pb-4 mb-4 border-b border-[#E1E1E4] -mx-6 px-6">
         <div className="flex items-center gap-2 mb-3">
-          <h3 className="text-[#101128] text-[24px] font-bold">{clinic.name}</h3>
+          <h3 className="text-[#30394A] text-[24px] font-normal">{clinic.name}</h3>
           <span className="text-[#777786] text-base font-normal ml-2">Site ID</span>
-          <span className="text-[#101128] text-base font-bold">{clinic.siteId}</span>
+          <span className="text-[#101128] text-base font-medium">{clinic.siteId}</span>
         </div>
         <div className="flex items-center gap-6 mb-3">
           <div className="flex items-center gap-1.5">
             <PhoneIcon />
-            <span className="text-[#30394A] text-sm">{clinic.phone}</span>
+            <span className="text-[#30394A] text-base">{clinic.phone}</span>
           </div>
           <div className="flex items-center gap-1.5">
             <MailIcon />
-            <span className="text-[#30394A] text-sm">{clinic.email}</span>
+            <span className="text-[#30394A] text-base">{clinic.email}</span>
           </div>
         </div>
         <div className="flex items-center gap-1.5 mb-3">
           <MapPinIcon />
-          <span className="text-[#30394A] text-sm">{clinic.address}</span>
+          <span className="text-[#30394A] text-base">{clinic.address}</span>
         </div>
         <div className="flex items-center gap-1.5">
           <GlobeIcon />
-          <span className="text-[#30394A] text-sm">{clinic.website}</span>
+          <span className="text-[#30394A] text-base">{clinic.website}</span>
         </div>
       </div>
 
