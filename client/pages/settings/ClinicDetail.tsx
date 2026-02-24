@@ -124,7 +124,7 @@ export function ClinicDetail({ clinic }: ClinicDetailProps) {
   const [activeDevice, setActiveDevice] = useState(0);
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="bg-white rounded-lg p-6 flex flex-col gap-4">
       {/* Site info */}
       <div className="pb-4">
         <div className="flex items-center gap-2 mb-3">
