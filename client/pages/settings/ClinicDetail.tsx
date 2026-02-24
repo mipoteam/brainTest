@@ -48,7 +48,7 @@ function CoilRow({ coil }: { coil: CoilInfo }) {
       <div className={cn("inline-flex h-6 w-8 justify-center items-center rounded-lg", bgColor)}>
         <span className="text-[#30394A] font-normal text-sm">{coil.type}</span>
       </div>
-      <span className="text-[#30394A] text-sm font-normal">{coil.model}</span>
+      <span className="text-[#30394A] text-base font-normal">{coil.model}</span>
     </div>
   );
 }
@@ -61,8 +61,8 @@ function DevicePanel({ device }: { device: DeviceInfo }) {
       {/* Device ID + Download log */}
       <div className="flex items-center justify-between py-4">
         <div className="flex items-center gap-2">
-          <span className="text-[#777786] text-sm font-normal">Device ID</span>
-          <span className="text-[#101128] text-sm font-bold">{device.deviceId}</span>
+          <span className="text-[#777786] text-base font-normal">Device ID</span>
+          <span className="text-[#101128] text-base font-bold">{device.deviceId}</span>
         </div>
         <div className="relative">
           <button
@@ -99,7 +99,7 @@ function DevicePanel({ device }: { device: DeviceInfo }) {
       <div className="grid grid-cols-3 gap-6 pt-4">
         {/* Activity */}
         <div className="flex flex-col gap-2">
-          <span className="text-[#101128] text-sm font-bold">Activity</span>
+          <span className="text-[#101128] text-base font-bold">Activity</span>
           <div className="flex flex-col gap-2 mt-1">
             {[
               { label: "Last Sync", value: device.activity.lastSync },
@@ -108,8 +108,8 @@ function DevicePanel({ device }: { device: DeviceInfo }) {
               { label: "Treatment counts", value: String(device.activity.treatmentCounts) },
             ].map(({ label, value }) => (
               <div key={label} className="flex flex-wrap items-baseline gap-1">
-                <span className="text-[#777786] text-xs font-normal whitespace-nowrap">{label}</span>
-                <span className="text-[#30394A] text-xs font-normal">{value}</span>
+                <span className="text-[#777786] text-sm font-normal whitespace-nowrap">{label}</span>
+                <span className="text-[#30394A] text-sm font-normal">{value}</span>
               </div>
             ))}
           </div>
@@ -117,7 +117,7 @@ function DevicePanel({ device }: { device: DeviceInfo }) {
 
         {/* Coil */}
         <div className="flex flex-col gap-2 border-l border-r border-[#E1E1E4] px-6">
-          <span className="text-[#101128] text-sm font-bold">Coil</span>
+          <span className="text-[#101128] text-base font-bold">Coil</span>
           <div className="flex flex-col gap-2 mt-1">
             {device.coils.map((coil, i) => (
               <CoilRow key={i} coil={coil} />
@@ -127,7 +127,7 @@ function DevicePanel({ device }: { device: DeviceInfo }) {
 
         {/* Software details */}
         <div className="flex flex-col gap-2">
-          <span className="text-[#101128] text-sm font-bold">Software details</span>
+          <span className="text-[#101128] text-base font-bold">Software details</span>
           <div className="flex flex-col gap-2 mt-1">
             {[
               { label: "Version", value: device.software.version },
@@ -137,8 +137,8 @@ function DevicePanel({ device }: { device: DeviceInfo }) {
               { label: "OS2", value: device.software.os2 },
             ].map(({ label, value }) => (
               <div key={label} className="flex items-baseline gap-1">
-                <span className="text-[#777786] text-xs font-normal">{label}</span>
-                <span className="text-[#30394A] text-xs font-normal">{value}</span>
+                <span className="text-[#777786] text-sm font-normal">{label}</span>
+                <span className="text-[#30394A] text-sm font-normal">{value}</span>
               </div>
             ))}
           </div>
@@ -161,26 +161,26 @@ export function ClinicDetail({ clinic }: ClinicDetailProps) {
       <div className="pb-4 mb-4 border-b border-[#E1E1E4] -mx-6 px-6">
         <div className="flex items-center gap-2 mb-3">
           <h3 className="text-[#101128] text-base font-bold">{clinic.name}</h3>
-          <span className="text-[#777786] text-xs font-normal">Site ID</span>
-          <span className="text-[#101128] text-xs font-bold">{clinic.siteId}</span>
+          <span className="text-[#777786] text-sm font-normal">Site ID</span>
+          <span className="text-[#101128] text-sm font-bold">{clinic.siteId}</span>
         </div>
         <div className="flex items-center gap-6 mb-3">
           <div className="flex items-center gap-1.5">
             <PhoneIcon />
-            <span className="text-[#30394A] text-xs">{clinic.phone}</span>
+            <span className="text-[#30394A] text-sm">{clinic.phone}</span>
           </div>
           <div className="flex items-center gap-1.5">
             <MailIcon />
-            <span className="text-[#30394A] text-xs">{clinic.email}</span>
+            <span className="text-[#30394A] text-sm">{clinic.email}</span>
           </div>
         </div>
         <div className="flex items-center gap-1.5 mb-3">
           <MapPinIcon />
-          <span className="text-[#30394A] text-xs">{clinic.address}</span>
+          <span className="text-[#30394A] text-sm">{clinic.address}</span>
         </div>
         <div className="flex items-center gap-1.5">
           <GlobeIcon />
-          <span className="text-[#30394A] text-xs">{clinic.website}</span>
+          <span className="text-[#30394A] text-sm">{clinic.website}</span>
         </div>
       </div>
 
@@ -192,7 +192,7 @@ export function ClinicDetail({ clinic }: ClinicDetailProps) {
               key={device.name}
               onClick={() => setActiveDevice(index)}
               className={cn(
-                "px-3 py-2.5 text-sm font-normal transition-colors relative whitespace-nowrap",
+                "px-3 py-2.5 text-base font-normal transition-colors relative whitespace-nowrap",
                 activeDevice === index
                   ? "text-[#005487] font-medium"
                   : "text-[#777786] hover:text-[#30394A]"

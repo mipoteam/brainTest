@@ -81,15 +81,15 @@ export function ClinicsList({ clinics, selectedId, onSelect }: ClinicsListProps)
               >
               <span
                 className={cn(
-                  "text-sm font-normal truncate",
+                  "text-base font-normal truncate",
                   isSelected ? "text-[#005487] font-medium" : "text-[#30394A]"
                 )}
               >
                 {clinic.name}
               </span>
-              <span className="text-[#30394A] text-sm font-normal">{clinic.siteId}</span>
-              <span className="text-[#30394A] text-sm font-normal">{clinic.devices}</span>
-              <span className="text-[#777786] text-sm font-normal truncate">{clinic.address}</span>
+              <span className="text-[#30394A] text-base font-normal">{clinic.siteId}</span>
+              <span className="text-[#30394A] text-base font-normal">{clinic.devices}</span>
+              <span className="text-[#777786] text-base font-normal truncate">{clinic.address}</span>
               </button>
             );
           })}
