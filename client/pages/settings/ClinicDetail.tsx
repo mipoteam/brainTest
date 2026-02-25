@@ -133,7 +133,7 @@ function DevicePanel({ device }: { device: DeviceInfo }) {
                 })}
                 <div className="mt-1">
                   <button
-                    className="w-full h-10 bg-[#005487] hover:bg-[#004066] text-white text-sm font-medium rounded-lg transition-colors"
+                    className="w-full h-[40px] bg-[#005487] hover:bg-[#004066] text-white text-sm font-medium rounded-lg transition-colors"
                     onClick={() => setLogOpen(false)}
                   >
                     Download
