@@ -88,7 +88,7 @@ function DevicePanel({ device }: { device: DeviceInfo }) {
         <div className="relative">
           <button
             onClick={() => setLogOpen(!logOpen)}
-            className="flex items-center gap-2 h-9 px-4 border border-[#E1E1E4] rounded bg-white hover:bg-gray-50 transition-colors"
+            className="flex items-center justify-between gap-2 h-9 px-3 w-[150px] border border-[#E1E1E4] rounded bg-white hover:bg-gray-50 transition-colors"
           >
             <span className="text-[#30394A] text-sm font-normal">Download log</span>
             {logOpen ? (
@@ -98,27 +98,27 @@ function DevicePanel({ device }: { device: DeviceInfo }) {
             )}
           </button>
           {logOpen && (
-            <div className="absolute right-0 top-full mt-1 w-48 bg-white border border-[#E1E1E4] rounded-lg shadow-lg z-10 overflow-hidden">
-              <div className="px-4 pt-3 pb-2 flex flex-col gap-3">
+            <div className="absolute right-0 top-full mt-1 w-full min-w-[150px] bg-white border border-[#E1E1E4] rounded-lg shadow-lg z-10 overflow-hidden">
+              <div className="p-3 flex flex-col gap-3">
                 {LOG_OPTIONS.map((opt) => {
                   const checked = selectedLogs.has(opt.id);
                   return (
                     <label
                       key={opt.id}
-                      className="flex items-center gap-3 cursor-pointer select-none"
+                      className="flex items-center gap-2 cursor-pointer select-none"
                     >
                       <span
                         onClick={() => toggleLog(opt.id)}
                         className={cn(
-                          "w-5 h-5 rounded flex items-center justify-center border transition-colors shrink-0",
+                          "w-[18px] h-[18px] rounded flex items-center justify-center border transition-colors shrink-0",
                           checked
                             ? "bg-[#005487] border-[#005487]"
                             : "bg-white border-[#B8B8C0]"
                         )}
                       >
                         {checked && (
-                          <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 4L4.5 7.5L11 1" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 3.5L3.5 6L9 1" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                         )}
                       </span>
@@ -132,9 +132,9 @@ function DevicePanel({ device }: { device: DeviceInfo }) {
                   );
                 })}
               </div>
-              <div className="px-4 pb-4 pt-2">
+              <div className="px-2 pb-2">
                 <button
-                  className="w-full h-10 bg-[#005487] hover:bg-[#004066] text-white text-sm font-medium rounded-lg transition-colors"
+                  className="w-full h-8 bg-[#005487] hover:bg-[#004066] text-white text-sm font-medium rounded transition-colors"
                   onClick={() => setLogOpen(false)}
                 >
                   Download
