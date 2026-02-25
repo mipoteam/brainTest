@@ -131,7 +131,7 @@ function DevicePanel({ device }: { device: DeviceInfo }) {
                     </label>
                   );
                 })}
-                <div className="p-3 pt-2">
+                <div className="mt-1">
                   <button
                     className="w-full h-10 bg-[#005487] hover:bg-[#004066] text-white text-base font-medium rounded-lg transition-colors"
                     onClick={() => setLogOpen(false)}
