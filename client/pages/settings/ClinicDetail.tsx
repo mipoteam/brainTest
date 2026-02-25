@@ -171,7 +171,7 @@ export function ClinicDetail({ clinic }: ClinicDetailProps) {
           </div>
           <div className="flex items-center gap-1.5">
             <MailIcon />
-            <span className="text-[#30394A] text-base">{clinic.email}</span>
+            <a href={`mailto:${clinic.email}`} className="text-[#30394A] text-base hover:underline">{clinic.email}</a>
           </div>
         </div>
         <div className="flex items-center gap-1.5 mb-3">
@@ -180,7 +180,7 @@ export function ClinicDetail({ clinic }: ClinicDetailProps) {
         </div>
         <div className="flex items-center gap-1.5">
           <GlobeIcon />
-          <span className="text-[#30394A] text-base">{clinic.website}</span>
+          <a href={clinic.website.startsWith('http') ? clinic.website : `https://${clinic.website}`} target="_blank" rel="noopener noreferrer" className="text-[#30394A] text-base hover:underline">{clinic.website}</a>
         </div>
       </div>
 

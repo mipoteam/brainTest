@@ -18,8 +18,8 @@ export function ClinicsTab() {
           <span className="text-[#B8B8C0] text-xs font-normal">LOGO</span>
         </div>
         <span className="text-[#30394A] text-[24px] font-normal">{organization.name}</span>
-        <span className="text-[#005487] text-base font-normal ml-4">{organization.email}</span>
-        <span className="text-[#005487] text-base font-normal">{organization.website}</span>
+        <a href={`mailto:${organization.email}`} className="text-[#005487] text-base font-normal ml-4 hover:underline">{organization.email}</a>
+        <a href={organization.website.startsWith('http') ? organization.website : `https://${organization.website}`} target="_blank" rel="noopener noreferrer" className="text-[#005487] text-base font-normal hover:underline">{organization.website}</a>
       </div>
 
       {/* Split layout: clinics list + detail */}
