@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { Clinic, DeviceInfo, CoilInfo } from "@/data/settingsData";
+import { Clinic, DeviceInfo, CoilInfo } from "@/services/settingsService";
 import { cn } from "@/lib/utils";
 
 const COIL_COLORS: Record<string, string> = {

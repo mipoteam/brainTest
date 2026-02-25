@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { organization, clinics, Clinic } from "@/data/settingsData";
+import { organization, clinics, Clinic } from "@/services/settingsService";
 import { ClinicsList } from "./ClinicsList";
 import { ClinicDetail } from "./ClinicDetail";
 

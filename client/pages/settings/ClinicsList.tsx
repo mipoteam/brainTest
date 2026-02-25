@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Search, Crown } from "lucide-react";
-import { Clinic } from "@/data/settingsData";
+import { Clinic } from "@/services/settingsService";
 import { cn } from "@/lib/utils";
 
 interface ClinicsListProps {
