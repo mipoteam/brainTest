@@ -53,8 +53,29 @@ function CoilRow({ coil }: { coil: CoilInfo }) {
   );
 }
 
+const LOG_OPTIONS = [
+  { id: "events", label: "Events log" },
+  { id: "treatment", label: "Treatment log" },
+  { id: "coil", label: "Coil log" },
+];
+
 function DevicePanel({ device }: { device: DeviceInfo }) {
   const [logOpen, setLogOpen] = useState(false);
+  const [selectedLogs, setSelectedLogs] = useState<Set<string>>(
+    new Set(["treatment", "coil"])
+  );
+
+  const toggleLog = (id: string) => {
+    setSelectedLogs((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
+      return next;
+    });
+  };
 
   return (
     <div>
@@ -77,19 +98,48 @@ function DevicePanel({ device }: { device: DeviceInfo }) {
             )}
           </button>
           {logOpen && (
-            <div className="absolute right-0 top-full mt-1 w-44 bg-white border border-[#E1E1E4] rounded-lg shadow-md z-10">
-              <button
-                className="w-full text-left px-4 py-2.5 text-sm text-[#30394A] hover:bg-[#ECF7FB] transition-colors"
-                onClick={() => setLogOpen(false)}
-              >
-                Download as CSV
-              </button>
-              <button
-                className="w-full text-left px-4 py-2.5 text-sm text-[#30394A] hover:bg-[#ECF7FB] transition-colors"
-                onClick={() => setLogOpen(false)}
-              >
-                Download as PDF
-              </button>
+            <div className="absolute right-0 top-full mt-1 w-48 bg-white border border-[#E1E1E4] rounded-lg shadow-lg z-10 overflow-hidden">
+              <div className="px-4 pt-3 pb-2 flex flex-col gap-3">
+                {LOG_OPTIONS.map((opt) => {
+                  const checked = selectedLogs.has(opt.id);
+                  return (
+                    <label
+                      key={opt.id}
+                      className="flex items-center gap-3 cursor-pointer select-none"
+                    >
+                      <span
+                        onClick={() => toggleLog(opt.id)}
+                        className={cn(
+                          "w-5 h-5 rounded flex items-center justify-center border transition-colors shrink-0",
+                          checked
+                            ? "bg-[#005487] border-[#005487]"
+                            : "bg-white border-[#B8B8C0]"
+                        )}
+                      >
+                        {checked && (
+                          <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 4L4.5 7.5L11 1" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        )}
+                      </span>
+                      <span
+                        onClick={() => toggleLog(opt.id)}
+                        className="text-sm text-[#30394A]"
+                      >
+                        {opt.label}
+                      </span>
+                    </label>
+                  );
+                })}
+              </div>
+              <div className="px-4 pb-4 pt-2">
+                <button
+                  className="w-full h-10 bg-[#30394A] hover:bg-[#232e3d] text-white text-sm font-medium rounded-lg transition-colors"
+                  onClick={() => setLogOpen(false)}
+                >
+                  Download
+                </button>
+              </div>
             </div>
           )}
         </div>
