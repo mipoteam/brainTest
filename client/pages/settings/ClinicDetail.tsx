@@ -245,7 +245,7 @@ export function ClinicDetail({ clinic }: ClinicDetailProps) {
       {/* Site info */}
       <div className="pb-4 border-b border-[#E1E1E4] -mx-6 px-6">
         {/* Name + Site ID */}
-        <div className="flex items-center gap-3 mb-3">
+        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-3">
           <h3 className="text-[#30394A] text-2xl font-normal leading-8">{clinic.name}</h3>
           <div className="flex items-center gap-1.5 ml-1">
             <span className="text-[#777786] text-sm font-normal">Site ID</span>
