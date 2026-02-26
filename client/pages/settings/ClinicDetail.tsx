@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
 import { Clinic, DeviceInfo, CoilInfo } from "@/services/settingsService";
 import { cn } from "@/lib/utils";
 
@@ -9,35 +8,41 @@ const COIL_COLORS: Record<string, string> = {
   H7: "bg-[#FFCE2D]",
 };
 
-// Custom SVG Icons
+// Contact icons (24x24, fill #777786)
 const PhoneIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M4.05 21C3.75 21 3.5 20.9 3.3 20.7C3.1 20.5 3 20.25 3 19.95V15.9C3 15.6833 3.075 15.4875 3.225 15.3125C3.375 15.1375 3.56667 15.0167 3.8 14.95L7.25 14.25C7.48333 14.2167 7.72083 14.2375 7.9625 14.3125C8.20417 14.3875 8.4 14.5 8.55 14.65L10.9 17C11.5333 16.6333 12.1333 16.2292 12.7 15.7875C13.2667 15.3458 13.8083 14.8667 14.325 14.35C14.875 13.8167 15.3792 13.2625 15.8375 12.6875C16.2958 12.1125 16.6917 11.5167 17.025 10.9L14.6 8.45C14.4667 8.31667 14.375 8.15833 14.325 7.975C14.275 7.79167 14.2667 7.56667 14.3 7.3L14.95 3.8C14.9833 3.58333 15.0917 3.39583 15.275 3.2375C15.4583 3.07917 15.6667 3 15.9 3H19.95C20.25 3 20.5 3.1 20.7 3.3C20.9 3.5 21 3.75 21 4.05C21 6.13333 20.5458 8.19167 19.6375 10.225C18.7292 12.2583 17.4417 14.1083 15.775 15.775C14.1083 17.4417 12.2583 18.7292 10.225 19.6375C8.19167 20.5458 6.13333 21 4.05 21ZM17.95 9C18.2333 8.35 18.45 7.69167 18.6 7.025C18.75 6.35833 18.8667 5.68333 18.95 5H16.75L16.3 7.35L17.95 9ZM9 17.9L7.35 16.25L5 16.75V18.95C5.68333 18.9 6.35833 18.7833 7.025 18.6C7.69167 18.4167 8.35 18.1833 9 17.9Z" fill="#777786"/>
+    <path d="M4.05 21C3.75 21 3.5 20.9 3.3 20.7C3.1 20.5 3 20.25 3 19.95V15.9C3 15.6833 3.075 15.4875 3.225 15.3125C3.375 15.1375 3.56667 15.0167 3.8 14.95L7.25 14.25C7.48333 14.2167 7.72083 14.2375 7.9625 14.3125C8.20417 14.3875 8.4 14.5 8.55 14.65L10.9 17C11.5333 16.6333 12.1333 16.2292 12.7 15.7875C13.2667 15.3458 13.8083 14.8667 14.325 14.35C14.875 13.8167 15.3792 13.2625 15.8375 12.6875C16.2958 12.1125 16.6917 11.5167 17.025 10.9L14.6 8.45C14.4667 8.31667 14.375 8.15833 14.325 7.975C14.275 7.79167 14.2667 7.56667 14.3 7.3L14.95 3.8C14.9833 3.58333 15.0917 3.39583 15.275 3.2375C15.4583 3.07917 15.6667 3 15.9 3H19.95C20.25 3 20.5 3.1 20.7 3.3C20.9 3.5 21 3.75 21 4.05C21 6.13333 20.5458 8.19167 19.6375 10.225C18.7292 12.2583 17.4417 14.1083 15.775 15.775C14.1083 17.4417 12.2583 18.7292 10.225 19.6375C8.19167 20.5458 6.13333 21 4.05 21Z" fill="#777786"/>
   </svg>
 );
 
 const MailIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M4 20C3.45 20 2.97917 19.8042 2.5875 19.4125C2.19583 19.0208 2 18.55 2 18V6C2 5.45 2.19583 4.97917 2.5875 4.5875C2.97917 4.19583 3.45 4 4 4H20C20.55 4 21.0208 4.19583 21.4125 4.5875C21.8042 4.97917 22 5.45 22 6V18C22 18.55 21.8042 19.0208 21.4125 19.4125C21.0208 19.8042 20.55 20 20 20H4ZM20 8L12.525 12.675C12.4417 12.725 12.3542 12.7625 12.2625 12.7875C12.1708 12.8125 12.0833 12.825 12 12.825C11.9167 12.825 11.8292 12.8125 11.7375 12.7875C11.6458 12.7625 11.5583 12.725 11.475 12.675L4 8V18H20V8ZM12 11L20 6H4L12 11ZM4 8.25V6.775V6.8V6.7875V8.25Z" fill="#777786"/>
+    <path d="M4 20C3.45 20 2.97917 19.8042 2.5875 19.4125C2.19583 19.0208 2 18.55 2 18V6C2 5.45 2.19583 4.97917 2.5875 4.5875C2.97917 4.19583 3.45 4 4 4H20C20.55 4 21.0208 4.19583 21.4125 4.5875C21.8042 4.97917 22 5.45 22 6V18C22 18.55 21.8042 19.0208 21.4125 19.4125C21.0208 19.8042 20.55 20 20 20H4ZM12 11L20 6H4L12 11ZM4 18H20V8L12.525 12.675C12.3583 12.775 12.1833 12.825 12 12.825C11.8167 12.825 11.6417 12.775 11.475 12.675L4 8V18Z" fill="#777786"/>
   </svg>
 );
 
 const MapPinIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 19.6875C14.0333 17.8208 15.5417 16.125 16.525 14.6C17.5083 13.075 18 11.7208 18 10.5375C18 8.72083 17.4208 7.23333 16.2625 6.07499C15.1042 4.91666 13.6833 4.33749 12 4.33749C10.3167 4.33749 8.89583 4.91666 7.7375 6.07499C6.57917 7.23333 6 8.72083 6 10.5375C6 11.7208 6.49167 13.075 7.475 14.6C8.45833 16.125 9.96667 17.8208 12 19.6875ZM12 21.6625C11.7667 21.6625 11.5333 21.6208 11.3 21.5375C11.0667 21.4542 10.8583 21.3292 10.675 21.1625C9.59167 20.1625 8.63333 19.1875 7.8 18.2375C6.96667 17.2875 6.27083 16.3667 5.7125 15.475C5.15417 14.5833 4.72917 13.725 4.4375 12.9C4.14583 12.075 4 11.2875 4 10.5375C4 8.03749 4.80417 6.04583 6.4125 4.56249C8.02083 3.07916 9.88333 2.33749 12 2.33749C14.1167 2.33749 15.9792 3.07916 17.5875 4.56249C19.1958 6.04583 20 8.03749 20 10.5375C20 11.2875 19.8542 12.075 19.5625 12.9C19.2708 13.725 18.8458 14.5833 18.2875 15.475C17.7292 16.3667 17.0333 17.2875 16.2 18.2375C15.3667 19.1875 14.4083 20.1625 13.325 21.1625C13.1417 21.3292 12.9333 21.4542 12.7 21.5375C12.4667 21.6208 12.2333 21.6625 12 21.6625ZM12 12.3375C12.55 12.3375 13.0208 12.1417 13.4125 11.75C13.8042 11.3583 14 10.8875 14 10.3375C14 9.78749 13.8042 9.31666 13.4125 8.92499C13.0208 8.53333 12.55 8.33749 12 8.33749C11.45 8.33749 10.9792 8.53333 10.5875 8.92499C10.1958 9.31666 10 9.78749 10 10.3375C10 10.8875 10.1958 11.3583 10.5875 11.75C10.9792 12.1417 11.45 12.3375 12 12.3375Z" fill="#777786"/>
+    <path d="M12 12C12.55 12 13.0208 11.8042 13.4125 11.4125C13.8042 11.0208 14 10.55 14 10C14 9.45 13.8042 8.97917 13.4125 8.5875C13.0208 8.19583 12.55 8 12 8C11.45 8 10.9792 8.19583 10.5875 8.5875C10.1958 8.97917 10 9.45 10 10C10 10.55 10.1958 11.0208 10.5875 11.4125C10.9792 11.8042 11.45 12 12 12ZM12 21.5C9.68333 19.4833 7.9375 17.6125 6.7625 15.8875C5.5875 14.1625 5 12.5667 5 11.1C5 8.86667 5.72917 7.08333 7.1875 5.75C8.64583 4.41667 10.3 3.75 12 3.75C13.7 3.75 15.3542 4.41667 16.8125 5.75C18.2708 7.08333 19 8.86667 19 11.1C19 12.5667 18.4125 14.1625 17.2375 15.8875C16.0625 17.6125 14.3167 19.4833 12 21.5Z" fill="#777786"/>
   </svg>
 );
 
 const GlobeIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g clipPath="url(#clip0_2858_6532)">
-      <path d="M12 21.9999C10.6333 21.9999 9.34167 21.7374 8.125 21.2124C6.90833 20.6874 5.84583 19.9707 4.9375 19.0624C4.02917 18.1541 3.3125 17.0916 2.7875 15.8749C2.2625 14.6582 2 13.3666 2 11.9999C2 10.6166 2.2625 9.32074 2.7875 8.11241C3.3125 6.90408 4.02917 5.84574 4.9375 4.93741C5.84583 4.02908 6.90833 3.31241 8.125 2.78741C9.34167 2.26241 10.6333 1.99991 12 1.99991C13.3833 1.99991 14.6792 2.26241 15.8875 2.78741C17.0958 3.31241 18.1542 4.02908 19.0625 4.93741C19.9708 5.84574 20.6875 6.90408 21.2125 8.11241C21.7375 9.32074 22 10.6166 22 11.9999C22 13.3666 21.7375 14.6582 21.2125 15.8749C20.6875 17.0916 19.9708 18.1541 19.0625 19.0624C18.1542 19.9707 17.0958 20.6874 15.8875 21.2124C14.6792 21.7374 13.3833 21.9999 12 21.9999ZM12 19.9499C12.4333 19.3499 12.8083 18.7249 13.125 18.0749C13.4417 17.4249 13.7 16.7332 13.9 15.9999H10.1C10.3 16.7332 10.5583 17.4249 10.875 18.0749C11.1917 18.7249 11.5667 19.3499 12 19.9499ZM9.4 19.5499C9.1 18.9999 8.8375 18.4291 8.6125 17.8374C8.3875 17.2457 8.2 16.6332 8.05 15.9999H5.1C5.58333 16.8332 6.1875 17.5582 6.9125 18.1749C7.6375 18.7916 8.46667 19.2499 9.4 19.5499ZM14.6 19.5499C15.5333 19.2499 16.3625 18.7916 17.0875 18.1749C17.8125 17.5582 18.4167 16.8332 18.9 15.9999H15.95C15.8 16.6332 15.6125 17.2457 15.3875 17.8374C15.1625 18.4291 14.9 18.9999 14.6 19.5499ZM4.25 13.9999H7.65C7.6 13.6666 7.5625 13.3374 7.5375 13.0124C7.5125 12.6874 7.5 12.3499 7.5 11.9999C7.5 11.6499 7.5125 11.3124 7.5375 10.9874C7.5625 10.6624 7.6 10.3332 7.65 9.99991H4.25C4.16667 10.3332 4.10417 10.6624 4.0625 10.9874C4.02083 11.3124 4 11.6499 4 11.9999C4 12.3499 4.02083 12.6874 4.0625 13.0124C4.10417 13.3374 4.16667 13.6666 4.25 13.9999ZM9.65 13.9999H14.35C14.4 13.6666 14.4375 13.3374 14.4625 13.0124C14.4875 12.6874 14.5 12.3499 14.5 11.9999C14.5 11.6499 14.4875 11.3124 14.4625 10.9874C14.4375 10.6624 14.4 10.3332 14.35 9.99991H9.65C9.6 10.3332 9.5625 10.6624 9.5375 10.9874C9.5125 11.3124 9.5 11.6499 9.5 11.9999C9.5 12.3499 9.5125 12.6874 9.5375 13.0124C9.5625 13.3374 9.6 13.6666 9.65 13.9999ZM16.35 13.9999H19.75C19.8333 13.6666 19.8958 13.3374 19.9375 13.0124C19.9792 12.6874 20 12.3499 20 11.9999C20 11.6499 19.9792 11.3124 19.9375 10.9874C19.8958 10.6624 19.8333 10.3332 19.75 9.99991H16.35C16.4 10.3332 16.4375 10.6624 16.4625 10.9874C16.4875 11.3124 16.5 11.6499 16.5 11.9999C16.5 12.3499 16.4875 12.6874 16.4625 13.0124C16.4375 13.3374 16.4 13.6666 16.35 13.9999ZM15.95 7.99991H18.9C18.4167 7.16658 17.8125 6.44158 17.0875 5.82491C16.3625 5.20824 15.5333 4.74991 14.6 4.44991C14.9 4.99991 15.1625 5.57074 15.3875 6.16241C15.6125 6.75408 15.8 7.36658 15.95 7.99991ZM10.1 7.99991H13.9C13.7 7.26658 13.4417 6.57491 13.125 5.92491C12.8083 5.27491 12.4333 4.64991 12 4.04991C11.5667 4.64991 11.1917 5.27491 10.875 5.92491C10.5583 6.57491 10.3 7.26658 10.1 7.99991ZM5.1 7.99991H8.05C8.2 7.36658 8.3875 6.75408 8.6125 6.16241C8.8375 5.57074 9.1 4.99991 9.4 4.44991C8.46667 4.74991 7.6375 5.20824 6.9125 5.82491C6.1875 6.44158 5.58333 7.16658 5.1 7.99991Z" fill="#777786"/>
-    </g>
-    <defs>
-      <clipPath id="clip0_2858_6532">
-        <rect width="24" height="24" fill="white"/>
-      </clipPath>
-    </defs>
+    <path d="M12 22C10.6167 22 9.31667 21.7375 8.1 21.2125C6.88333 20.6875 5.825 19.975 4.925 19.075C4.025 18.175 3.3125 17.1167 2.7875 15.9C2.2625 14.6833 2 13.3833 2 12C2 10.6167 2.2625 9.31667 2.7875 8.1C3.3125 6.88333 4.025 5.825 4.925 4.925C5.825 4.025 6.88333 3.3125 8.1 2.7875C9.31667 2.2625 10.6167 2 12 2C13.3833 2 14.6833 2.2625 15.9 2.7875C17.1167 3.3125 18.175 4.025 19.075 4.925C19.975 5.825 20.6875 6.88333 21.2125 8.1C21.7375 9.31667 22 10.6167 22 12C22 13.3833 21.7375 14.6833 21.2125 15.9C20.6875 17.1167 19.975 18.175 19.075 19.075C18.175 19.975 17.1167 20.6875 15.9 21.2125C14.6833 21.7375 13.3833 22 12 22ZM12 20C12.3833 19.45 12.7167 18.8708 13 18.2625C13.2833 17.6542 13.5167 17.0167 13.7 16.35H10.3C10.4833 17.0167 10.7167 17.6542 11 18.2625C11.2833 18.8708 11.6167 19.45 12 20ZM9.4 19.6C9.0667 19.0333 8.7875 18.4333 8.5625 17.8C8.3375 17.1667 8.15 16.5 8 15.85H5.15C5.6 16.7 6.1875 17.4333 6.9125 18.05C7.6375 18.6667 8.46667 19.1167 9.4 19.4V19.6ZM14.6 19.6V19.4C15.5333 19.1167 16.3625 18.6667 17.0875 18.05C17.8125 17.4333 18.4 16.7 18.85 15.85H16C15.85 16.5 15.6625 17.1667 15.4375 17.8C15.2125 18.4333 14.9333 19.0333 14.6 19.6ZM4.25 14.35H7.5C7.45 14.0333 7.4167 13.7125 7.4 13.3875C7.3833 13.0625 7.375 12.7333 7.375 12.4C7.375 11.9667 7.3875 11.5875 7.4125 11.2625C7.4375 10.9375 7.4667 10.6333 7.5 10.35H4.25C4.15 10.65 4.075 10.9542 4.025 11.2625C3.975 11.5708 3.95 11.9 3.95 12.25C3.95 12.6333 3.975 12.9792 4.025 13.2875C4.075 13.5958 4.15 13.9 4.25 14.35ZM9 14.35H15C15.05 14.0333 15.0833 13.7083 15.1 13.375C15.1167 13.0417 15.125 12.7167 15.125 12.4C15.125 11.9667 15.1083 11.5875 15.075 11.2625C15.0417 10.9375 15.0083 10.6333 14.975 10.35H9.025C8.99167 10.6333 8.9625 10.9375 8.9375 11.2625C8.9125 11.5875 8.9 11.9667 8.9 12.4C8.9 12.7167 8.90833 13.0417 8.925 13.375C8.94167 13.7083 8.96667 14.0333 9 14.35ZM16.5 14.35H19.75C19.85 14.0333 19.925 13.7125 19.975 13.3875C20.025 13.0625 20.05 12.7167 20.05 12.35C20.05 11.9833 20.025 11.6333 19.975 11.3C19.925 10.9667 19.85 10.65 19.75 10.35H16.5C16.5333 10.6333 16.5625 10.9375 16.5875 11.2625C16.6125 11.5875 16.625 11.9667 16.625 12.4C16.625 12.7333 16.6167 13.0583 16.6 13.375C16.5833 13.6917 16.55 14.0167 16.5 14.35ZM15.95 8.85H18.85C18.4 8.01667 17.8125 7.29167 17.0875 6.675C16.3625 6.05833 15.5333 5.6 14.6 5.3V5.5C14.9333 6.06667 15.2125 6.66667 15.4375 7.3C15.6625 7.93333 15.85 8.38333 15.95 8.85ZM10.3 8.85H13.7C13.5167 8.18333 13.2833 7.54583 13 6.9375C12.7167 6.32917 12.3833 5.75 12 5.2C11.6167 5.75 11.2833 6.32917 11 6.9375C10.7167 7.54583 10.4833 8.18333 10.3 8.85ZM5.15 8.85H8.05C8.2 8.18333 8.3875 7.53333 8.6125 6.9C8.8375 6.26667 9.11667 5.66667 9.45 5.1C8.51667 5.4 7.6875 5.85833 6.9625 6.475C6.2375 7.09167 5.66667 7.91667 5.15 8.85Z" fill="#777786"/>
+  </svg>
+);
+
+// Chevron icons matching Figma exactly (stroke-linecap="square")
+const ChevronDownIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 11L12 15L16 11" stroke="#92929E" strokeWidth="2" strokeLinecap="square" strokeLinejoin="round"/>
+  </svg>
+);
+
+const ChevronUpIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 13L12 9L16 13" stroke="#92929E" strokeWidth="2" strokeLinecap="square" strokeLinejoin="round"/>
   </svg>
 );
 
@@ -45,10 +50,10 @@ function CoilRow({ coil }: { coil: CoilInfo }) {
   const bgColor = COIL_COLORS[coil.type] || "bg-[#B8B8C0]";
   return (
     <div className="flex items-center gap-2">
-      <div className={cn("inline-flex h-6 w-8 justify-center items-center rounded-lg", bgColor)}>
+      <div className={cn("inline-flex h-6 w-8 justify-center items-center rounded-lg shrink-0", bgColor)}>
         <span className="text-[#30394A] font-normal text-sm">{coil.type}</span>
       </div>
-      <span className="text-[#30394A] text-base font-normal">{coil.model}</span>
+      <span className="text-[#30394A] text-sm font-normal">{coil.model}</span>
     </div>
   );
 }
@@ -68,96 +73,123 @@ function DevicePanel({ device }: { device: DeviceInfo }) {
   const toggleLog = (id: string) => {
     setSelectedLogs((prev) => {
       const next = new Set(prev);
-      if (next.has(id)) {
-        next.delete(id);
-      } else {
-        next.add(id);
-      }
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
       return next;
     });
   };
 
   return (
     <div>
-      {/* Device ID + Download log */}
-      <div className="flex items-center justify-between py-4">
+      {/* Device ID + Download log — per Figma */}
+      <div className="flex items-center justify-between py-4 border-b border-[#E1E1E4] -mx-6 px-6">
         <div className="flex items-center gap-2">
-          <span className="text-[#777786] text-base font-normal">Device ID</span>
-          <span className="text-[#101128] text-base font-bold">{device.deviceId}</span>
+          <span className="text-[#777786] text-sm font-normal">Device ID</span>
+          <span className="text-[#30394A] text-sm font-bold">{device.deviceId}</span>
         </div>
+
+        {/* Dropdown — width 183px per Figma */}
         <div className="relative">
           <button
             onClick={() => setLogOpen(!logOpen)}
-            className="flex items-center justify-between gap-2 h-10 px-4 w-[180px] border border-[#E1E1E4] rounded-lg bg-white hover:bg-gray-50 transition-colors"
+            className="flex items-center gap-1 bg-white border border-[#E1E1E4] rounded-lg"
+            style={{ width: 183, padding: "8px 12px" }}
           >
-            <span className="text-[#30394A] text-base font-normal">Download log</span>
-            {logOpen ? (
-              <ChevronUp className="w-5 h-5 text-[#777786]" />
-            ) : (
-              <ChevronDown className="w-5 h-5 text-[#777786]" />
-            )}
+            <span className="flex-1 text-left text-[#30394A] text-base font-normal leading-5">
+              Download log
+            </span>
+            {logOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
           </button>
+
           {logOpen && (
-            <div className="absolute right-0 top-full mt-1 w-full min-w-[180px] bg-white border border-[#E1E1E4] rounded-lg shadow-lg z-10 overflow-hidden">
-              <div className="p-1 flex flex-col">
-                {LOG_OPTIONS.map((opt) => {
-                  const checked = selectedLogs.has(opt.id);
-                  return (
-                    <label
-                      key={opt.id}
-                      className="flex items-center gap-3 cursor-pointer select-none p-3 hover:bg-[#ECF7FB] transition-colors rounded-md"
-                    >
-                      <span
-                        onClick={() => toggleLog(opt.id)}
-                        className={cn(
-                          "w-5 h-5 rounded flex items-center justify-center border transition-colors shrink-0",
-                          checked
-                            ? "bg-[#005487] border-[#005487]"
-                            : "bg-white border-[#B8B8C0]"
-                        )}
-                      >
+            <div
+              className="absolute right-0 top-full mt-1 bg-white border border-[#E1E1E4] rounded-lg z-20 flex flex-col"
+              style={{
+                width: 183,
+                padding: 4,
+                gap: 4,
+                boxShadow: "1px 1px 4px 0 rgba(0,0,0,0.08)",
+              }}
+            >
+              {LOG_OPTIONS.map((opt) => {
+                const checked = selectedLogs.has(opt.id);
+                return (
+                  <label
+                    key={opt.id}
+                    className="flex items-center rounded-lg cursor-pointer hover:bg-[#ECF7FB] transition-colors"
+                    style={{ height: 40, padding: "0 12px", gap: 8 }}
+                  >
+                    {/* Checkbox group: gap 6px between 24x24 container and label */}
+                    <div className="flex items-center" style={{ gap: 6 }}>
+                      {/* 24x24 checkbox container */}
+                      <div className="relative shrink-0" style={{ width: 24, height: 24 }}>
+                        {/* 18x18 actual checkbox at offset 3,3 */}
+                        <div
+                          className={cn(
+                            "absolute transition-colors",
+                            checked ? "bg-[#005487]" : "bg-white"
+                          )}
+                          style={{
+                            left: 3,
+                            top: 3,
+                            width: 18,
+                            height: 18,
+                            borderRadius: 2,
+                            border: checked ? "none" : "1.5px solid #B8B8C0",
+                          }}
+                          onClick={() => toggleLog(opt.id)}
+                        />
                         {checked && (
-                          <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 4L4.5 7.5L11 1" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          <svg
+                            style={{ position: "absolute", left: 3, top: 3 }}
+                            width="18"
+                            height="18"
+                            viewBox="0 0 18 18"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            onClick={() => toggleLog(opt.id)}
+                          >
+                            <path d="M14 5L7.33333 11.6667L4 8.33333" stroke="white" strokeWidth="1.5"/>
                           </svg>
                         )}
-                      </span>
+                      </div>
                       <span
+                        className="text-[#30394A] text-base font-normal leading-5"
                         onClick={() => toggleLog(opt.id)}
-                        className="text-base text-[#30394A]"
                       >
                         {opt.label}
                       </span>
-                    </label>
-                  );
-                })}
-                <div className="mt-1">
-                  <button
-                    className="w-full h-[40px] bg-[#005487] hover:bg-[#004066] text-white text-sm font-medium rounded-lg transition-colors"
-                    onClick={() => setLogOpen(false)}
-                  >
-                    Download
-                  </button>
-                </div>
-              </div>
+                    </div>
+                  </label>
+                );
+              })}
+
+              {/* Download button — h-[40px], px-[16px], 14px weight 500 */}
+              <button
+                className="flex items-center justify-center bg-[#005487] hover:bg-[#004373] rounded-lg text-white transition-colors"
+                style={{ height: 40, padding: "0 16px", fontSize: 14, fontWeight: 500, lineHeight: "18px" }}
+                onClick={() => setLogOpen(false)}
+              >
+                Download
+              </button>
             </div>
           )}
         </div>
       </div>
 
-      {/* Three columns */}
-      <div className="grid grid-cols-3 gap-6 pt-4">
+      {/* Three columns: Activity | Coil | Software */}
+      <div className="grid grid-cols-3 pt-4" style={{ gap: 24 }}>
         {/* Activity */}
-        <div className="flex flex-col gap-2">
-          <span className="text-[#101128] text-base font-bold">Activity</span>
-          <div className="flex flex-col gap-2 mt-1">
+        <div className="flex flex-col gap-3">
+          <span className="text-[#30394A] text-sm font-bold">Activity</span>
+          <div className="flex flex-col gap-2">
             {[
               { label: "Last Sync", value: device.activity.lastSync },
               { label: "Last treatment", value: device.activity.lastTreatment },
               { label: "Last protocol", value: device.activity.lastProtocol },
               { label: "Treatment counts", value: String(device.activity.treatmentCounts) },
             ].map(({ label, value }) => (
-              <div key={label} className="flex flex-wrap items-baseline gap-1">
+              <div key={label} className="flex items-baseline gap-1 flex-wrap">
                 <span className="text-[#777786] text-sm font-normal whitespace-nowrap">{label}</span>
                 <span className="text-[#30394A] text-sm font-normal">{value}</span>
               </div>
@@ -166,9 +198,9 @@ function DevicePanel({ device }: { device: DeviceInfo }) {
         </div>
 
         {/* Coil */}
-        <div className="flex flex-col gap-2 border-l border-r border-[#E1E1E4] px-6">
-          <span className="text-[#101128] text-base font-bold">Coil</span>
-          <div className="flex flex-col gap-2 mt-1">
+        <div className="flex flex-col gap-3 border-l border-r border-[#E1E1E4] px-6">
+          <span className="text-[#30394A] text-sm font-bold">Coil</span>
+          <div className="flex flex-col gap-2">
             {device.coils.map((coil, i) => (
               <CoilRow key={i} coil={coil} />
             ))}
@@ -176,9 +208,9 @@ function DevicePanel({ device }: { device: DeviceInfo }) {
         </div>
 
         {/* Software details */}
-        <div className="flex flex-col gap-2">
-          <span className="text-[#101128] text-base font-bold">Software details</span>
-          <div className="flex flex-col gap-2 mt-1">
+        <div className="flex flex-col gap-3">
+          <span className="text-[#30394A] text-sm font-bold">Software details</span>
+          <div className="flex flex-col gap-2">
             {[
               { label: "Version", value: device.software.version },
               { label: "DAM", value: device.software.dam },
@@ -206,43 +238,64 @@ export function ClinicDetail({ clinic }: ClinicDetailProps) {
   const [activeDevice, setActiveDevice] = useState(0);
 
   return (
-    <div className="bg-white rounded-lg p-6 flex flex-col gap-4">
+    <div className="bg-white rounded-lg p-6 flex flex-col">
       {/* Site info */}
-      <div className="pb-4 mb-4 border-b border-[#E1E1E4] -mx-6 px-6">
-        <div className="flex items-center gap-2 mb-3">
-          <h3 className="text-[#30394A] text-[24px] font-normal">{clinic.name}</h3>
-          <span className="text-[#777786] text-base font-normal ml-2">Site ID</span>
-          <span className="text-[#101128] text-base font-medium">{clinic.siteId}</span>
+      <div className="pb-4 border-b border-[#E1E1E4] -mx-6 px-6">
+        {/* Name + Site ID */}
+        <div className="flex items-center gap-3 mb-3">
+          <h3 className="text-[#30394A] text-2xl font-normal leading-8">{clinic.name}</h3>
+          <div className="flex items-center gap-1.5 ml-1">
+            <span className="text-[#777786] text-sm font-normal">Site ID</span>
+            <span className="text-[#30394A] text-sm font-bold">{clinic.siteId}</span>
+          </div>
         </div>
-        <div className="flex items-center gap-6 mb-3">
+
+        {/* Phone + Email */}
+        <div className="flex items-center gap-4 mb-2">
           <div className="flex items-center gap-1.5">
             <PhoneIcon />
-            <span className="text-[#30394A] text-base">{clinic.phone}</span>
+            <span className="text-[#30394A] text-sm font-normal">{clinic.phone}</span>
           </div>
           <div className="flex items-center gap-1.5">
             <MailIcon />
-            <a href={`mailto:${clinic.email}`} className="text-[#30394A] text-base hover:underline">{clinic.email}</a>
+            <a
+              href={`mailto:${clinic.email}`}
+              className="text-[#30394A] text-sm font-normal hover:underline"
+            >
+              {clinic.email}
+            </a>
           </div>
         </div>
-        <div className="flex items-center gap-1.5 mb-3">
+
+        {/* Address */}
+        <div className="flex items-center gap-1.5 mb-2">
           <MapPinIcon />
-          <span className="text-[#30394A] text-base">{clinic.address}</span>
+          <span className="text-[#30394A] text-sm font-normal">{clinic.address}</span>
         </div>
+
+        {/* Website */}
         <div className="flex items-center gap-1.5">
           <GlobeIcon />
-          <a href={clinic.website.startsWith('http') ? clinic.website : `https://${clinic.website}`} target="_blank" rel="noopener noreferrer" className="text-[#30394A] text-base hover:underline">{clinic.website}</a>
+          <a
+            href={clinic.website.startsWith("http") ? clinic.website : `https://${clinic.website}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#30394A] text-sm font-normal hover:underline"
+          >
+            {clinic.website}
+          </a>
         </div>
       </div>
 
       {/* Device sub-tabs */}
-      <div>
-        <div className="flex border-b border-[#B8B8C0]">
+      <div className="mt-4">
+        <div className="flex border-b border-[#E1E1E4] -mx-6 px-6">
           {clinic.deviceList.map((device, index) => (
             <button
               key={device.name}
               onClick={() => setActiveDevice(index)}
               className={cn(
-                "px-3 py-2.5 text-base font-normal transition-colors relative whitespace-nowrap",
+                "py-2.5 text-sm font-normal transition-colors relative whitespace-nowrap mr-2",
                 activeDevice === index
                   ? "text-[#005487] font-medium"
                   : "text-[#777786] hover:text-[#30394A]"

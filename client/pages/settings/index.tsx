@@ -6,11 +6,11 @@ import { cn } from "@/lib/utils";
 const TOP_TABS = ["Users", "Clinics", "Scales"];
 
 export default function SettingsPage() {
-  const [activeTab, setActiveTab] = useState(1); // default: Clinics
+  const [activeTab, setActiveTab] = useState(1);
 
   return (
     <MainLayout>
-      <div className="px-4 md:px-10 py-6">
+      <div className="px-10 py-6">
         {/* Page title */}
         <h1 className="text-[#30394A] text-2xl font-medium leading-[30px] mb-4">
           Settings
@@ -23,10 +23,10 @@ export default function SettingsPage() {
               key={tab}
               onClick={() => setActiveTab(index)}
               className={cn(
-                "px-5 py-3 text-base font-normal transition-colors relative",
+                "px-4 py-3 text-sm transition-colors relative",
                 activeTab === index
                   ? "text-[#005487] font-medium"
-                  : "text-[#777786] hover:text-[#30394A]"
+                  : "text-[#777786] font-normal hover:text-[#30394A]"
               )}
             >
               {tab}
@@ -43,9 +43,7 @@ export default function SettingsPage() {
             User management coming soon.
           </div>
         )}
-
         {activeTab === 1 && <ClinicsTab />}
-
         {activeTab === 2 && (
           <div className="flex items-center justify-center h-48 text-[#777786] text-sm">
             Scales configuration coming soon.
