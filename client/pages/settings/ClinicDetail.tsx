@@ -49,7 +49,7 @@ const ChevronUpIcon = () => (
 function CoilRow({ coil }: { coil: CoilInfo }) {
   const bgColor = COIL_COLORS[coil.type] || "bg-[#B8B8C0]";
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-2 flex-wrap">
       <div className={cn("inline-flex h-6 w-8 justify-center items-center rounded-lg shrink-0", bgColor)}>
         <span className="text-[#30394A] font-normal text-sm">{coil.type}</span>
       </div>
