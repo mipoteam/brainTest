@@ -17,15 +17,15 @@ export default function SettingsPage() {
         </h1>
 
         {/* Top tabs */}
-        <div className="flex border-b border-[#E1E1E4] mb-6">
+        <div className="flex gap-8 border-b border-[#E1E1E4] mb-6">
           {TOP_TABS.map((tab, index) => (
             <button
               key={tab}
               onClick={() => setActiveTab(index)}
               className={cn(
-                "px-4 py-3 text-sm transition-colors relative",
+                "pb-3 text-sm transition-colors relative",
                 activeTab === index
-                  ? "text-[#005487] font-medium"
+                  ? "text-[#005487] font-bold"
                   : "text-[#777786] font-normal hover:text-[#30394A]"
               )}
             >

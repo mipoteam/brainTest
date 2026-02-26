@@ -48,13 +48,13 @@ export function ClinicsList({ clinics, selectedId, onSelect }: ClinicsListProps)
       </div>
 
       {/* Search */}
-      <div className="relative mx-6 mb-4">
+      <div className="relative mx-6 mb-4 w-[280px]">
         <input
           type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Look for a clinic"
-          className="w-full h-9 pl-3 pr-9 border border-[#E1E1E4] rounded-lg text-sm text-[#30394A] placeholder:text-[#B8B8C0] focus:outline-none focus:border-[#005487] transition-colors"
+          className="w-full h-[40px] pl-3 pr-9 border border-[#E1E1E4] rounded-lg text-sm text-[#30394A] placeholder:text-[#B8B8C0] focus:outline-none focus:border-[#005487] transition-colors"
         />
         <span className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
           <SearchIcon />
@@ -62,9 +62,9 @@ export function ClinicsList({ clinics, selectedId, onSelect }: ClinicsListProps)
       </div>
 
       {/* Table header */}
-      <div className="grid grid-cols-[2fr_1fr_1fr_2fr] px-6 py-2 border-b border-[#E1E1E4]">
+      <div className="grid grid-cols-[2fr_1fr_1fr_2fr] px-6 py-3 border-b border-[#E1E1E4]">
         {["Site Name", "Site ID", "Devices", "Address"].map((col) => (
-          <span key={col} className="text-[#777786] text-xs font-normal">
+          <span key={col} className="text-[#777786] text-sm font-normal">
             {col}
           </span>
         ))}
