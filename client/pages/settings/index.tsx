@@ -23,7 +23,7 @@ export default function SettingsPage() {
               key={tab}
               onClick={() => setActiveTab(index)}
               className={cn(
-                "py-3 px-3 text-sm transition-colors relative",
+                "p-2 px-3 text-sm transition-colors relative",
                 activeTab === index
                   ? "text-[#005487] font-bold bg-white rounded-t-lg"
                   : "text-[#777786] font-normal hover:text-[#30394A]"
