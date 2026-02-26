@@ -25,7 +25,7 @@ export default function SettingsPage() {
               className={cn(
                 "pb-3 px-3 text-sm transition-colors relative",
                 activeTab === index
-                  ? "text-[#005487] font-bold"
+                  ? "text-[#005487] font-bold bg-white rounded-t-lg"
                   : "text-[#777786] font-normal hover:text-[#30394A]"
               )}
             >
