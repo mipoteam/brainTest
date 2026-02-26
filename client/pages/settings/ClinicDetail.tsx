@@ -82,7 +82,7 @@ function DevicePanel({ device }: { device: DeviceInfo }) {
   return (
     <div>
       {/* Device ID + Download log — per Figma */}
-      <div className="flex items-center justify-between py-4 border-b border-[#E1E1E4] -mx-6 px-6">
+      <div className="flex flex-col xl:flex-row items-start xl:items-center justify-between py-4 border-b border-[#E1E1E4] -mx-6 px-6 gap-4 xl:gap-0">
         <div className="flex items-center gap-2">
           <span className="text-[#777786] text-sm font-normal">Device ID</span>
           <span className="text-[#30394A] text-sm font-bold">{device.deviceId}</span>
@@ -178,9 +178,9 @@ function DevicePanel({ device }: { device: DeviceInfo }) {
       </div>
 
       {/* Three columns: Activity | Coil | Software */}
-      <div className="grid grid-cols-3 pt-4" style={{ gap: 24 }}>
+      <div className="grid grid-cols-1 xl:grid-cols-3 pt-4 gap-6">
         {/* Activity */}
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 pb-6 border-b border-[#E1E1E4] xl:border-b-0 xl:pb-0">
           <span className="text-[#30394A] text-sm font-bold">Activity</span>
           <div className="flex flex-col gap-2">
             {[
@@ -197,32 +197,35 @@ function DevicePanel({ device }: { device: DeviceInfo }) {
           </div>
         </div>
 
-        {/* Coil */}
-        <div className="flex flex-col gap-3 border-l border-r border-[#E1E1E4] px-6">
-          <span className="text-[#30394A] text-sm font-bold">Coil</span>
-          <div className="flex flex-col gap-2">
-            {device.coils.map((coil, i) => (
-              <CoilRow key={i} coil={coil} />
-            ))}
+        {/* Bottom row (Coil & Software details) 50/50 split on smaller screens */}
+        <div className="grid grid-cols-2 gap-6 xl:col-span-2 xl:flex xl:gap-6">
+          {/* Coil */}
+          <div className="flex flex-col gap-3 xl:border-l xl:border-r border-[#E1E1E4] xl:px-6 xl:w-1/2">
+            <span className="text-[#30394A] text-sm font-bold">Coil</span>
+            <div className="flex flex-col gap-2">
+              {device.coils.map((coil, i) => (
+                <CoilRow key={i} coil={coil} />
+              ))}
+            </div>
           </div>
-        </div>
 
-        {/* Software details */}
-        <div className="flex flex-col gap-3">
-          <span className="text-[#30394A] text-sm font-bold">Software details</span>
-          <div className="flex flex-col gap-2">
-            {[
-              { label: "Version", value: device.software.version },
-              { label: "DAM", value: device.software.dam },
-              { label: "MCU", value: device.software.mcu },
-              { label: "OS1", value: device.software.os1 },
-              { label: "OS2", value: device.software.os2 },
-            ].map(({ label, value }) => (
-              <div key={label} className="flex items-baseline gap-1">
-                <span className="text-[#777786] text-sm font-normal">{label}</span>
-                <span className="text-[#30394A] text-sm font-normal">{value}</span>
-              </div>
-            ))}
+          {/* Software details */}
+          <div className="flex flex-col gap-3 xl:w-1/2">
+            <span className="text-[#30394A] text-sm font-bold">Software details</span>
+            <div className="flex flex-col gap-2">
+              {[
+                { label: "Version", value: device.software.version },
+                { label: "DAM", value: device.software.dam },
+                { label: "MCU", value: device.software.mcu },
+                { label: "OS1", value: device.software.os1 },
+                { label: "OS2", value: device.software.os2 },
+              ].map(({ label, value }) => (
+                <div key={label} className="flex items-baseline gap-1">
+                  <span className="text-[#777786] text-sm font-normal">{label}</span>
+                  <span className="text-[#30394A] text-sm font-normal">{value}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
