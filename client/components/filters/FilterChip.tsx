@@ -7,8 +7,8 @@ interface FilterChipProps {
 
 export function FilterChip({ label, onRemove }: FilterChipProps) {
   return (
-    <div className="inline-flex h-6 px-2 justify-center items-center gap-1 rounded-lg bg-[#DBEDF7]">
-      <span className="text-[#30394A] font-normal text-sm leading-[18px]">
+    <div className="inline-flex h-6 px-2 justify-center items-center gap-1 rounded-lg bg-[#DBEDF7] max-w-full">
+      <span className="text-[#30394A] font-normal text-sm leading-[18px] truncate whitespace-nowrap">
         {label}
       </span>
       <button

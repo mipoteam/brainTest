@@ -197,7 +197,7 @@ export default function Protocols() {
         </div>
 
         {/* Filters Bar */}
-        <div className="flex items-center gap-0 mb-4 h-10">
+        <div className="flex flex-wrap items-center gap-y-3 gap-x-0 mb-4">
           {/* Search Filter */}
           <SearchFilter value={searchQuery} onChange={setSearchQuery} />
 

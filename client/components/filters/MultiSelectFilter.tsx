@@ -69,17 +69,25 @@ export function MultiSelectFilter({
         </span>
       </div>
       <div className="relative">
-        <button
+        <div
+          role="button"
+          tabIndex={0}
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center gap-1 h-10 px-3 border border-[#E1E1E4] rounded bg-white hover:bg-gray-50 transition-colors min-w-[229px]"
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              setIsOpen(!isOpen);
+            }
+          }}
+          className="flex items-center gap-1 h-10 px-3 border border-[#E1E1E4] rounded bg-white hover:bg-gray-50 transition-colors min-w-[229px] cursor-pointer"
         >
           <div className="flex items-center gap-1 flex-1">
             {selected.length === 0 ? (
-              <span className="text-[#B8B8C0] font-normal text-sm">
+              <span className="text-[#B8B8C0] font-normal text-sm whitespace-nowrap">
                 Select {label.toLowerCase()}
               </span>
             ) : (
-              <>
+              <div className="flex flex-1 items-center gap-1 whitespace-nowrap">
                 {displayedChips.map((value) => (
                   <FilterChip
                     key={value}
@@ -90,13 +98,13 @@ export function MultiSelectFilter({
                   />
                 ))}
                 {remainingCount > 0 && (
-                  <div className="inline-flex h-6 px-2 justify-center items-center rounded-lg bg-[#DBEDF7]">
+                  <div className="inline-flex h-6 px-2 justify-center items-center rounded-lg bg-[#DBEDF7] shrink-0">
                     <span className="text-[#30394A] font-normal text-sm leading-[18px]">
                       +{remainingCount}
                     </span>
                   </div>
                 )}
-              </>
+              </div>
             )}
           </div>
           {isOpen ? (
@@ -104,10 +112,10 @@ export function MultiSelectFilter({
           ) : (
             <ChevronDown className="w-6 h-6 text-[#777786] flex-shrink-0" />
           )}
-        </button>
+        </div>
 
         {isOpen && (
-          <div className="absolute top-full left-0 mt-1 w-[265px] bg-white border border-[#E1E1E4] rounded-lg shadow-[1px_1px_4px_0_rgba(0,0,0,0.08)] z-50 overflow-hidden">
+          <div className="absolute top-full left-0 mt-1 min-w-[265px] bg-white border border-[#E1E1E4] rounded-lg shadow-[1px_1px_4px_0_rgba(0,0,0,0.08)] z-50">
             <div className="p-1 flex flex-col gap-1">
               {/* All options checkbox */}
               <div className="flex items-center h-10 pl-3 pr-3 border-b border-[#E1E1E4]">
@@ -135,14 +143,14 @@ export function MultiSelectFilter({
                     className="flex items-center h-10 px-3 rounded-lg cursor-pointer hover:bg-[#ECF7FB]"
                     onClick={() => handleToggle(option.value)}
                   >
-                    <div className="flex items-center gap-1.5">
-                      <div className="w-6 h-6 flex items-center justify-center">
+                    <div className="flex items-center gap-1.5 w-full">
+                      <div className="w-6 h-6 flex items-center justify-center shrink-0">
                         <Checkbox
                           checked={isSelected}
                           className="w-[18px] h-[18px] rounded-sm border-[1.5px] border-[#B8B8C0] data-[state=checked]:bg-[#005487] data-[state=checked]:border-[#005487]"
                         />
                       </div>
-                      <span className="text-[#30394A] font-normal text-base leading-5">
+                      <span className="text-[#30394A] font-normal text-base leading-5 whitespace-nowrap">
                         {option.label}
                       </span>
                     </div>

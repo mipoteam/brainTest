@@ -139,18 +139,18 @@ export function CreateProtocolDialog({
         onInteractOutside={(e) => e.preventDefault()}
       >
         {/* Custom Header */}
-        <div className="relative flex items-center bg-[#005487] px-8 py-4 h-[72px]">
-          <h2 className="text-white text-xl font-bold">Create protocol</h2>
+        <div className="relative flex items-center bg-[#005487] px-[64px] py-4 h-[72px]">
+          <DialogTitle className="text-white text-xl font-bold">Create protocol</DialogTitle>
           <button
             onClick={handleCancel}
-            className="absolute right-8 flex items-center justify-center p-2 hover:bg-white/10 rounded transition-colors"
+            className="absolute right-[64px] flex items-center justify-center p-2 hover:bg-white/10 rounded transition-colors"
           >
             <X className="w-4 h-4 text-[#A7A7B1]" />
           </button>
         </div>
 
         {/* Content */}
-        <div className="flex flex-col px-16 py-4 gap-4 max-h-[calc(100vh-200px)] overflow-y-auto">
+        <div className="flex flex-col px-[64px] py-4 gap-4 max-h-[calc(100vh-200px)] overflow-y-auto">
           {/* Details Section */}
           <div className="flex flex-col gap-4">
             {/* Protocol Name */}
@@ -235,7 +235,7 @@ export function CreateProtocolDialog({
                   <RadioGroupItem
                     value="standard"
                     id="standard"
-                    className="w-6 h-6 border-[1.5px] border-[#005487] data-[state=checked]:border-[#005487]"
+                    className="w-4 h-4 border-[1.5px] border-[#005487] text-[#005487] data-[state=checked]:border-[#005487]"
                   />
                   <label
                     htmlFor="standard"
@@ -248,7 +248,7 @@ export function CreateProtocolDialog({
                   <RadioGroupItem
                     value="theta-burst"
                     id="theta-burst"
-                    className="w-6 h-6 border-[1.5px] border-[#A7A7B1] data-[state=checked]:border-[#005487]"
+                    className="w-4 h-4 border-[1.5px] border-[#A7A7B1] text-[#A7A7B1] data-[state=checked]:border-[#005487] data-[state=checked]:text-[#005487]"
                     disabled
                   />
                   <label
@@ -440,7 +440,7 @@ export function CreateProtocolDialog({
         </div>
 
         {/* Footer */}
-        <div className="flex items-center justify-end gap-4 px-8 py-4 border-t border-[#E1E1E4]">
+        <div className="flex items-center justify-end gap-4 px-[64px] py-4 border-t border-[#E1E1E4]">
           <button
             onClick={handleCancel}
             className="h-10 px-4 flex items-center justify-center border border-[#005487] rounded-lg transition-colors hover:bg-[#DBEDF7]"
